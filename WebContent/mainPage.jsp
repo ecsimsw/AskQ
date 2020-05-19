@@ -15,7 +15,7 @@
 <body>
 	<link rel='styleSheet' href ="resource/styleSheet/mainForm.css">
 	
-	<button type="button" onClick="location.href = 'logout.jsp'">logout</button>
+	<button type="button" onClick="location.href = 'logout.jsp'">log-out</button>
 	
 	<div class="main">
 		<!-- Home Page -->
