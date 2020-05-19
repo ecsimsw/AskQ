@@ -10,13 +10,15 @@
 <%
    String loginInfo = (String)session.getAttribute("loginInfo");
 %>
-<script type="text/javascript">alert(<%=loginInfo%>)</script>
-
 <body>
 	<link rel='styleSheet' href ="resource/styleSheet/mainForm.css">
 	
-	<button type="button" onClick="location.href = 'logout.jsp'">log-out</button>
-	
+<% if(loginInfo ==null){%>
+    <button type="button" onClick="location.href = 'loginPage.jsp'">Login</button>
+<%}else{ %>
+	<button type="button" onClick="location.href = 'logout.jsp'"><%=loginInfo%></button>
+<%} %>
+
 	<div class="main">
 		<!-- Home Page -->
 		<div class="home">
@@ -26,22 +28,13 @@
 						<h1 class="headline">AnyQ</h1>
 					</div>
 				</div>
-
+				<br>
 				<div class="row">
 					<div class="eight columns offset-by-two">
-						<form action="" class="wiki-search-form">
-							<input type="search" placeholder="Search Username.." class="wiki-search-input" id="wiki-search-input">
-							<button type="button" onclick="location.href='loginPage.jsp'" class="button btn btn-wiki">Ask</button>							
-							<button type="button" onclick="location.href='loginPage.jsp'" class="button btn btn-wiki">Answer</button>
-							</form>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="eight columns offset-by-two">
-						<footer class="attribution">
-							<p>Designed and coded by <a href="https://ecsimsw.tistory.com">JinHwan Kim</a></p>
-						</footer>
+						<form action="askListPage.jsp" class="wiki-search-form" method="get">
+							<input type="search" onKeydown="javascript:if(event.keyCode == 13) form.submit();" 
+							placeholder="Search Username.." class="wiki-search-input" id="wiki-search-input" name="searchedUser">
+						</form>
 					</div>
 				</div>
 			</div>

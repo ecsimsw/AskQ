@@ -3,10 +3,24 @@ package com.ecsimsw.askq;
 import java.sql.*;
 import java.util.*;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
 public class MemberDAO {
 	public static MemberDAO memberDAO = null;
 	
-	private MemberDAO() {}
+	DataSource dataSource = null;
+	Connection conn = null;
+	
+	private MemberDAO() {
+	    try{
+			Context init = new InitialContext();
+			dataSource = (DataSource) init.lookup("java:comp/env/jdbc/myDBCP");
+	    }catch(Exception e) {
+	    	e.printStackTrace();
+	    }
+	}
 	
 	public static MemberDAO getInstance() {
 		if(memberDAO == null) {
@@ -22,9 +36,7 @@ public class MemberDAO {
 		String query = "insert into members values (?,?)";
 		
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			String url = "jdbc:mysql://localhost:3306/askq?serverTimezone=UTC";
-			conn = DriverManager.getConnection(url,"root","root");
+			conn = dataSource.getConnection();
 			
 			pstmt = conn.prepareStatement(query);
 			pstmt.setString(1, newMember.getId());
@@ -58,9 +70,7 @@ public class MemberDAO {
 		String query = "select * from members where id =(?)";
 		
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			String url = "jdbc:mysql://localhost:3306/askq?serverTimezone=UTC";
-			conn = DriverManager.getConnection(url,"root","root");
+			conn = dataSource.getConnection();
 			
 			pstmt = conn.prepareStatement(query);
 			pstmt.setString(1, inputMember.getId());
@@ -77,10 +87,7 @@ public class MemberDAO {
 			
 			if(id == null) return MemberDAO.USER_NONEXISTENT;
 			else if(!inputMember.getPw().equals(pw)) return MemberDAO.WRONG_PASSWORD;
-			else {
-				return MemberDAO.VALID_USER;
-			}
-			
+			else { return MemberDAO.VALID_USER;}
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally {

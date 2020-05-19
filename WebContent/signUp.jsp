@@ -8,9 +8,6 @@
   String inputId = (String)request.getParameter("id");
   String inputPw = (String)request.getParameter("pw");
   
-  System.out.println("id : "+inputId);
-  System.out.println("pw : "+inputPw);
-  
   MemberDTO newRegisterMember = new MemberDTO(inputId, inputPw);
   int result = memberDAO.loginCheck(newRegisterMember);
   
