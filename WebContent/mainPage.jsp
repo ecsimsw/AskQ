@@ -16,7 +16,7 @@
 <% if(loginInfo ==null){%>
     <button type="button" onClick="location.href = 'loginPage.jsp'">Login</button>
 <%}else{ %>
-	<button type="button" onClick="location.href = 'logout.jsp'"><%=loginInfo%></button>
+	<button type="button" onClick="location.href = 'logout.jsp'">Logout</button>
 <%} %>
 
 	<div class="main">
