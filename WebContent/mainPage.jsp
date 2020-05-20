@@ -31,7 +31,7 @@
 				<br>
 				<div class="row">
 					<div class="eight columns offset-by-two">
-						<form action="askListPage.jsp" class="wiki-search-form" method="get">
+						<form action="searchedUserPage.jsp" class="wiki-search-form" method="get">
 							<input type="search" onKeydown="javascript:if(event.keyCode == 13) form.submit();" 
 							placeholder="Search Username.." class="wiki-search-input" id="wiki-search-input" name="searchedUser">
 						</form>

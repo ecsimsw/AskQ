@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+
+
+
+---- DB INFO ----
+
+DB_name : askq
+
+1. members
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | varchar(20) | NO   | PRI | NULL    |       |
+| pw    | varchar(20) | NO   |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+
+2. questions
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| no         | int          | NO   | PRI | NULL    | auto_increment |
+| questioner | varchar(20)  | YES  |     | NULL    |                |
+| receiver   | varchar(20)  | YES  |     | NULL    |                |
+| question   | varchar(100) | NO   |     | NULL    |                |
+| answer     | varchar(100) | YES  |     | NULL    |                |
+| status     | int          | NO   |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+
+status
+
+0 : private 
+1 : public
+
+</body>
+</html>
