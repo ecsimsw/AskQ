@@ -1,0 +1,17 @@
+@charset "EUC-KR";
+
+#profileWrap {
+    width: 600px;
+    height : 50px;
+    border: 1px solid #ddd;
+    border-bottom-width: 0px;
+    
+	text-align : center;
+	display: table-cell;
+	vertical-align: middle;
+	
+	font-size : 25px;
+}
+
+#searchedUser{
+}

@@ -7,7 +7,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-public class MemberDAO {
+public class MemberDAO{
 	public static MemberDAO memberDAO = null;
 	
 	DataSource dataSource = null;
@@ -102,5 +102,4 @@ public class MemberDAO {
 		
 		return result;
 	}
-
 }

@@ -15,20 +15,68 @@
 
 	 	if(memberDAO.loginCheck(new MemberDTO(searchedId, " ")) == MemberDAO.USER_NONEXISTENT){
 	 %>
+	 
+	 
+	 <%-- start non-valid user --%>
+	 
+	 
 	 <script>
-	 	alert("non existent user");
-	 	history.go(-1);
+	 	//alert("non existent user");
+	 	//history.go(-1);
 	 </script>
+	 Non Existent User
+	 
+	 
+	 <%-- start valid User --%>
+	 
 	 <%
-	 	}else{
-		 	QuestionDAO questionDAO = QuestionDAO.getInstance();
-		    ArrayList<QuestionDTO> searched = questionDAO.searchByReceiver(searchedId);
-		 	for(QuestionDTO question : searched){
+	 }else{
+	 	QuestionDAO questionDAO = QuestionDAO.getInstance();
 	 %>
-	 	<%=question.getQuestioner() + " : " +question.getQuestion() + " : "+question.getAnswer() %><br>
+	 
+	 <%-- profile form --%>
+	 
+	 <link rel='styleSheet' href ="resource/styleSheet/profileForm.css">
+	 <div id="profileWrap">
+	 	<div id = "searchedUser">
+	 	   <%= searchedId %>
+	 	</div>
+	 </div>
+	 
+	 <%-- question form --%>
+	 
+	 <link rel='styleSheet' href ="resource/styleSheet/chatForm.css">
+	  <div id="chatWrap">
+           <div id="chatLog">
+	 <% 	
+	    ArrayList<QuestionDTO> searched = questionDAO.searchByReceiver(searchedId);
+	 	Collections.sort(searched);
+	 	
+	 	for(QuestionDTO question : searched){
+	 %>
+        <div class="anotherMsg">
+            <span class="anotherName"><i><%=question.getQuestioner() %></i></span><br>
+            <span class="msg"><%= question.getQuestion() %></span>
+        </div>
+        <div class="myMsg">
+            <span class="msg"><%=question.getAnswer() %></span>
+        </div>     
 	 <%
 	 	 	}
-	 	}
 	 %>
+	 
+	 <%-- ask form --%>
+	 
+		 </div>
+            <form id="chatForm">
+                <input type="text" autocomplete="off" size="30" id="message" placeholder="Ask me">
+                <input type="submit" value="send">
+            </form>
+       </div>
+     <%
+	  }
+	 %>
+	  <%-- end valid user --%>
+	 
 </body>
 </html>

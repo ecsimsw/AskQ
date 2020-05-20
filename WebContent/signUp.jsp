@@ -25,8 +25,7 @@
   	alert("Welcome!!");
   </script>  
 <%
+	session.setAttribute("loginInfo", newRegisterMember.getId());
+	response.sendRedirect("mainPage.jsp");
   }
-  
-  session.setAttribute("loginInfo", newRegisterMember.getId());
-  response.sendRedirect("mainPage.jsp");
 %>

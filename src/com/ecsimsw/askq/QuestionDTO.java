@@ -1,6 +1,6 @@
 package com.ecsimsw.askq;
 
-public class QuestionDTO {
+public class QuestionDTO implements Comparable<QuestionDTO>{
 	int no = 0;
 	String questioner ="";
 	String receiver = "";
@@ -66,6 +66,11 @@ public class QuestionDTO {
 
 	public void setStatus(int status) {
 		this.status = status;
+	}
+
+	@Override
+	public int compareTo(QuestionDTO o) {
+		return ((QuestionDTO) o).getNo() < this.no ? -1 : 1;
 	}
 	
 }
