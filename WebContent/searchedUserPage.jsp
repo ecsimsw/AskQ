@@ -11,6 +11,7 @@
 <body>
 	<% 
 		String searchedId = (String)request.getParameter("searchedUser");
+	
 		MemberDAO memberDAO = MemberDAO.getInstance(); 
 
 	 	if(memberDAO.loginCheck(new MemberDTO(searchedId, " ")) == MemberDAO.USER_NONEXISTENT){
@@ -68,10 +69,11 @@
 	 <%-- ask form --%>
 		 </div>
             <form id="chatForm" method = "post" action = 'ask.jsp'>
-            	<input type ="text" name="questioner">
+            	<input type ="hidden" name="searchedUser" value=<%= searchedId %>>
+            	<input type ="text" placeholder="Your name" name="questioner">
             	<button type="submit">send</button>
             	<br><br>
-            	<textarea id="question" name="questionContent"> </textarea>
+            	<textarea id="question" placeholder="Your name" name="questionContent"> </textarea>
             </form>
        </div>
      <%

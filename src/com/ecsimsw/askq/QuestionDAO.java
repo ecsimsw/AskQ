@@ -31,6 +31,37 @@ public class QuestionDAO {
 		
 		return questionDAO;
 	}
+	
+	public int insertQuestion(QuestionDTO question) {
+		Connection conn =null;
+		PreparedStatement pstmt = null;
+		String query = "INSERT INTO questions (questioner, receiver, question, answer, status) VALUES (?,?,?,?,?)";
+		
+		try {
+			conn = dataSource.getConnection();
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, question.getQuestioner());
+			pstmt.setString(2,question.getReceiver());
+			pstmt.setString(3, question.getQuestion());
+			pstmt.setString(4,question.getAnswer());
+			pstmt.setInt(5,question.getStatus());
+			
+			pstmt.executeUpdate();
+		}catch(Exception e){
+			e.printStackTrace();
+			return -1;
+		}finally {
+			try {
+				if(conn != null) conn.close();
+				if(pstmt != null) pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return 0;
+	}
+	
 	public ArrayList<QuestionDTO> searchByReceiver(String searchedUser) {
 		Connection conn =null;
 		PreparedStatement pstmt = null;
@@ -65,6 +96,7 @@ public class QuestionDAO {
 			try {
 				if(conn != null) conn.close();
 				if(pstmt != null) pstmt.close();
+				if(rs != null) rs.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
