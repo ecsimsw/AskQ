@@ -66,11 +66,12 @@
 	 %>
 	 
 	 <%-- ask form --%>
-	 
 		 </div>
-            <form id="chatForm">
-                <input type="text" autocomplete="off" size="30" id="message" placeholder="Ask me">
-                <input type="submit" value="send">
+            <form id="chatForm" method = "post" action = 'ask.jsp'>
+            	<input type ="text" name="questioner">
+            	<button type="submit">send</button>
+            	<br><br>
+            	<textarea id="question" name="questionContent"> </textarea>
             </form>
        </div>
      <%
