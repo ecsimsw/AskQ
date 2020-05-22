@@ -50,7 +50,7 @@
 	  <div id="chatWrap">
            <div id="chatLog">
 	 <% 	
-	    ArrayList<QuestionDTO> searched = questionDAO.searchByReceiver(searchedId);
+	    ArrayList<QuestionDTO> searched = questionDAO.searchPublicQ(searchedId);
 	 	Collections.sort(searched);
 	 	
 	 	for(QuestionDTO question : searched){
@@ -65,15 +65,16 @@
 	 <%
 	 	 	}
 	 %>
-	 
-	 <%-- ask form --%>
 		 </div>
+		 
+	 <%-- ask form --%>
+	 <br><br>
             <form id="chatForm" method = "post" action = 'ask.jsp'>
             	<input type ="hidden" name="searchedUser" value=<%= searchedId %>>
             	<input type ="text" placeholder="Your name" name="questioner">
             	<button type="submit">send</button>
             	<br><br>
-            	<textarea id="question" placeholder="Your name" name="questionContent"> </textarea>
+            	<textarea id="question" placeholder="Your name" name="questionContent"></textarea>
             </form>
        </div>
      <%

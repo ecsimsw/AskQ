@@ -6,7 +6,7 @@
 	QuestionDAO questionDAO = QuestionDAO.getInstance();
 
 	int no = 0;
-	String questioner =   request.getParameter("questioner");
+	String questioner = request.getParameter("questioner");
 	String receiver = request.getParameter("searchedUser");
 	String question = request.getParameter("questionContent");
 	String answer = null;
@@ -17,14 +17,14 @@
 	if(r == 0){
 %>
 <script>
- 	alert("ask succeed");
+ 	alert("Ask succeed");
  	history.go(-1);
 </script>
 <%
 	}else{
 %>
 <script>
- 	alert("ask succeed");
+ 	alert("ask failed");
  	history.go(-1);
 </script>
 <%

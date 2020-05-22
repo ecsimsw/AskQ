@@ -61,12 +61,80 @@ public class QuestionDAO {
 		
 		return 0;
 	}
-	
-	public ArrayList<QuestionDTO> searchByReceiver(String searchedUser) {
+	public int updateAnswer(int no, String answer, int status) {
+		Connection conn =null;
+		PreparedStatement pstmt = null;
+		String query = "UPDATE questions SET answer = (?), status =(?) WHERE no =(?)";
+		
+		try {
+			conn = dataSource.getConnection();
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, answer);
+			pstmt.setInt(2, status);
+			pstmt.setInt(3, no);
+			
+			pstmt.executeUpdate();
+		}catch(Exception e){
+			e.printStackTrace();
+			return -1;
+		}finally {
+			try {
+				if(conn != null) conn.close();
+				if(pstmt != null) pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return 0;
+	}
+	public ArrayList<QuestionDTO> searchPublicQ(String searchedUser) {
 		Connection conn =null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String query = "SELECT * FROM questions WHERE receiver = (?)";
+		String query = "SELECT * FROM questions WHERE receiver = (?) and status != 0";
+		
+		ArrayList<QuestionDTO> searchedContent = new ArrayList<>();
+		
+		try {
+			conn = dataSource.getConnection();
+			
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, searchedUser);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				int no = rs.getInt("no");
+				String questioner = rs.getString("questioner");
+				String receiver = rs.getString("receiver");
+				String question = rs.getString("question");
+				String answer = rs.getString("answer");
+				int status = rs.getInt("status");
+				
+				searchedContent.add(
+				new QuestionDTO(no,questioner,receiver,question,answer,status)
+				);
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally {
+			try {
+				if(conn != null) conn.close();
+				if(pstmt != null) pstmt.close();
+				if(rs != null) rs.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return searchedContent;
+	}
+	
+	public ArrayList<QuestionDTO> searchNewQ(String searchedUser) {
+		Connection conn =null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String query = "SELECT * FROM questions WHERE receiver = (?) and status = 0";
 		
 		ArrayList<QuestionDTO> searchedContent = new ArrayList<>();
 		
