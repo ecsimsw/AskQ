@@ -9,6 +9,7 @@
 <title>AnyQ _ searched</title>
 </head>
 <body>
+
 	<% 
 		String searchedId = (String)request.getParameter("searchedUser");
 	
@@ -32,9 +33,15 @@
 	 
 	 <%
 	 }else{
-	 	QuestionDAO questionDAO = QuestionDAO.getInstance();
+		 QuestionDAO questionDAO = QuestionDAO.getInstance();
 	 %>
 	 
+	 <form method ="get" action ="askNewPage.jsp">
+	  <input type ="hidden" name="searchedId" value=<%= searchedId %>>
+	  <button type=submit>Ask</button>
+	 </form>
+	
+		 
 	 <%-- profile form --%>
 	 
 	 <link rel='styleSheet' href ="resource/styleSheet/profileForm.css">
@@ -46,7 +53,7 @@
 	 
 	 <%-- question form --%>
 	 
-	 <link rel='styleSheet' href ="resource/styleSheet/chatForm.css">
+	 <link rel='styleSheet' href ="resource/styleSheet/searchUserForm.css">
 	  <div id="chatWrap">
            <div id="chatLog">
 	 <% 	
@@ -66,21 +73,10 @@
 	 	 	}
 	 %>
 		 </div>
-		 
-	 <%-- ask form --%>
-	 <br><br>
-            <form id="chatForm" method = "post" action = 'ask.jsp'>
-            	<input type ="hidden" name="searchedUser" value=<%= searchedId %>>
-            	<input type ="text" placeholder="Your name" name="questioner">
-            	<button type="submit">send</button>
-            	<br><br>
-            	<textarea id="question" placeholder="Your name" name="questionContent"></textarea>
-            </form>
-       </div>
+     </div>
      <%
 	  }
 	 %>
-	  <%-- end valid user --%>
-	 
+	
 </body>
 </html>

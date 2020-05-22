@@ -18,14 +18,14 @@
 %>
 <script>
  	alert("Ask succeed");
- 	history.go(-1);
+ 	location.href = "searchedUserPage.jsp?searchedUser=" + "<%=receiver%>";
 </script>
 <%
 	}else{
 %>
 <script>
  	alert("ask failed");
- 	history.go(-1);
+ 	location.href = "askNewPage.jsp?searchedId=" + "<%=receiver%>";
 </script>
 <%
 }
