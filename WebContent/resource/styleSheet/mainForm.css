@@ -1,4 +1,41 @@
 @charset "EUC-KR";
+
+.main-page {
+  width: 85%;
+  padding: 3% 0 0;
+  margin: auto;
+  
+  position: relative;
+  z-index: 1;
+}
+
+.Button {
+  margin-top:20px;
+  margin-left:15px;
+  width: 120px;
+  height: 40px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #525252;
+  background-color: #fff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
+
+.Button:hover {
+  background-color: #0084FF;
+  box-shadow: 0px 15px 20px #cee9fd;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+
 /*
 * Skeleton V2.0.4
 * Copyright 2014, Dave Gamache

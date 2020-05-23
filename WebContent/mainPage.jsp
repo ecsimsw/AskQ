@@ -12,11 +12,11 @@
 %>
 <body>
 	<link rel='styleSheet' href ="resource/styleSheet/mainForm.css">
-	
+	 <div class="main-page">
 <% if(loginInfo ==null){%>
-    <button type="button" onClick="location.href = 'loginPage.jsp'">Login</button>
+    <button class="Button" type="button" onClick="location.href = 'loginPage.jsp'">Login</button>
 <%}else{ %>
-	<button type="button" onClick="location.href = 'userQuestionPage.jsp'">myQuestions</button>
+	<button class="Button" type="button" onClick="location.href = 'userQuestionPage.jsp'">myQ</button>
 <%} %>
 
 	<div class="main">
@@ -40,5 +40,6 @@
 			</div>
 		</div>
 	</div>
+	</div>>
 </body>
 </html>

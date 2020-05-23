@@ -35,48 +35,48 @@
 	 }else{
 		 QuestionDAO questionDAO = QuestionDAO.getInstance();
 	 %>
-	 
-	 <form method ="get" action ="askNewPage.jsp">
-	  <input type ="hidden" name="searchedId" value=<%= searchedId %>>
-	  <button type=submit>Ask</button>
-	 </form>
-	
-		 
+			 
 	 <%-- profile form --%>
 	 
-	 <link rel='styleSheet' href ="resource/styleSheet/profileForm.css">
-	 <div id="profileWrap">
-	 	<div id = "searchedUser">
-	 	   <%= searchedId %>
-	 	</div>
-	 </div>
-	 
-	 <%-- question form --%>
-	 
 	 <link rel='styleSheet' href ="resource/styleSheet/searchUserForm.css">
-	  <div id="chatWrap">
+	 <div class="login-page">
+	  <div class="form">
+	  
+		 <form method ="get" action ="mainPage.jsp" class="main">
+		  <button type=submit class ="Button">main</button>
+		 </form>
+ 		 <form method ="get" action ="askNewPage.jsp" class="ask">
+		  <input type ="hidden" name="searchedId" value=<%= searchedId %>>
+		  <button type=submit class ="Button">Ask</button>
+		 </form>
+		
+	 	   <h3><%= searchedId %></h3><br>
+	       <%-- question form --%>
+			 
+		  <div id="chatWrap">
            <div id="chatLog">
-	 <% 	
-	    ArrayList<QuestionDTO> searched = questionDAO.searchPublicQ(searchedId);
-	 	Collections.sort(searched);
-	 	
-	 	for(QuestionDTO question : searched){
-	 %>
-        <div class="anotherMsg">
-            <span class="anotherName"><i><%=question.getQuestioner() %></i></span><br>
-            <span class="msg"><%= question.getQuestion() %></span>
-        </div>
-        <div class="myMsg">
-            <span class="msg"><%=question.getAnswer() %></span>
-        </div>     
-	 <%
-	 	 	}
-	 %>
-		 </div>
-     </div>
-     <%
-	  }
-	 %>
-	
+			 <% 	
+			    ArrayList<QuestionDTO> searched = questionDAO.searchPublicQ(searchedId);
+			 	Collections.sort(searched);
+			 	
+			 	for(QuestionDTO question : searched){
+			 %>
+		        <div class="anotherMsg">
+		            <span class="anotherName"><i>  <%=question.getQuestioner() %></i></span><br>
+		            <span class="msg"><%= question.getQuestion() %></span>
+		        </div>
+		        <div class="myMsg">
+		            <span class="msg"><%=question.getAnswer() %></span>
+		        </div>     
+			 <%
+			 	 	}
+			 %>
+			 </div>
+	     </div>
+	    </div>
+	 </div>
+	     <%
+		  }
+		 %>
 </body>
 </html>
