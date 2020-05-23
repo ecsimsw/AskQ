@@ -171,4 +171,70 @@ public class QuestionDAO {
 		}
 		return searchedContent;
 	}
+	
+	public int deleteByNo(int no) {
+		Connection conn =null;
+		PreparedStatement pstmt = null;
+		String query = "DELETE FROM questions WHERE no =(?)";
+		
+		try {
+			conn = dataSource.getConnection();
+			pstmt = conn.prepareStatement(query);
+			pstmt.setInt(1, no);
+			
+			pstmt.executeUpdate();
+		}catch(Exception e){
+			e.printStackTrace();
+			return -1;
+		}finally {
+			try {
+				if(conn != null) conn.close();
+				if(pstmt != null) pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return 0;
+	}
+	
+	public QuestionDTO getQuestionByNo(int no) {
+		Connection conn =null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String query = "SELECT * FROM questions WHERE no=(?)";
+		
+		try {
+			conn = dataSource.getConnection();
+			
+			pstmt = conn.prepareStatement(query);
+			pstmt.setInt(1, no);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				String questioner = rs.getString("questioner");
+				String receiver = rs.getString("receiver");
+				String question = rs.getString("question");
+				String answer = rs.getString("answer");
+				System.out.println("no: "+no+ " answer :"+answer);
+				int status = rs.getInt("status");
+					
+				return new QuestionDTO
+						(no,questioner,receiver,question,answer,status);
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally {
+			try {
+				if(conn != null) conn.close();
+				if(pstmt != null) pstmt.close();
+				if(rs != null) rs.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return null;
+	}
 }

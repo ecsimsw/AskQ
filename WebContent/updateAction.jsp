@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+    
 <%@ page import="com.ecsimsw.askq.*" %>
 <%
 	QuestionDAO questionDAO = QuestionDAO.getInstance();
@@ -13,7 +14,7 @@
 %>
 <script>
 	alert("update succeed");
-	history.back();
+	<%response.sendRedirect("userQuestionPage.jsp"); %>
 </script>
 <%
   }else{
@@ -25,3 +26,4 @@
 <%
   }
 %>
+	

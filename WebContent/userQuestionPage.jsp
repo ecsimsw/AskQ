@@ -1,71 +1,104 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@ page import="com.ecsimsw.askq.*" %>
 <%@ page import="java.util.*"  %>
-<%@ page import="com.ecsimsw.askq.*"  %>
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="EUC-KR">
-<title>askq / <%=session.getAttribute("loginInfo")%></title>
-</head>
-<body>
+<!DOCTYPE html> 
+<html> 
+<head> 
+     <meta charset="utf-8"> 
+     <title>userQuestion</title> 
+</head> 
+
+<body> 
 
 <link rel='styleSheet' href ="resource/styleSheet/userQuestionForm.css">
-	
-<h3>newQuestion</h3> 
 
-    <% 
-        String loginInfo = (String)session.getAttribute("loginInfo"); 
-    	QuestionDAO questionDAO;
-    	ArrayList<QuestionDTO> searched;
-    %>
+  <% 
+      String loginInfo = (String)session.getAttribute("loginInfo"); 
+  	QuestionDAO questionDAO;
+  	ArrayList<QuestionDTO> searched;
+  %>
+ <div class="questions">
+ <button onclick="location.href='mainPage.jsp'">home</button>
+ 
+ <table>
+  <caption>New Questions</caption>
+  <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Questioner</th>
+      <th scope="col">Question</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
     <%
     	questionDAO = QuestionDAO.getInstance();
-        searched = questionDAO.searchNewQ(loginInfo);
+   		 searched = questionDAO.searchNewQ("ecsimsw");
+    
+        //searched = questionDAO.searchNewQ(loginInfo);
 	 	Collections.sort(searched);
 	 	
+	 	int index_newQuestions =1;
 	 	for(QuestionDTO question : searched){
 	 %>
-	 <form method='post' action='update.jsp'>
-        <div class="">
-        	<input type="hidden" name="no" value="<%=question.getNo()%>"> 
-            <span><i><%=question.getQuestioner() %></i></span>
-            <span id="questionBox"><%= question.getQuestion() %></span><br>
-        </div>
-        <div class="">
-        	<textarea id="answerBox" placeholder="Answer" name="answerContent"></textarea>
-        	<button type="submit">answer</button>	
-        </div>  
-      </form>
-      <br>   
+    <tr>
+      <td data-label="No"><%=index_newQuestions++%></td>
+      <td data-label="Questioner"><%=question.getQuestioner() %></td>
+      <td data-label="Question"><%= question.getQuestion() %></td>
+      <td data-label="Action">
+	   <button
+	   onclick="location.href='updatePage.jsp?no=<%=question.getNo()%>'">Update</button> 	   
+	   
+	   <button
+	   onclick="location.href='deletePage.jsp?no=<%=question.getNo()%>'">Delete</button>
+	  </td>
+    </tr>
 	 <%
-	 	 	}
+	 	}
 	 %>
-
-<h3>answered</h3> 
+  </tbody>
+  </table>
+  <br><br>
+   <table>
+  <caption>Answered</caption>
+  <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Questioner</th>
+      <th scope="col">Question</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
 
     <%
     	questionDAO = QuestionDAO.getInstance();
         searched = questionDAO.searchPublicQ(loginInfo);
 	 	Collections.sort(searched);
 	 	
+	 	int index_answered =1;
 	 	for(QuestionDTO question : searched){
 	 %>
-		 <form method='post' action='update.jsp'>
-	        <div class="">
-	        	<input type="hidden" name="no" value="<%=question.getNo()%>"> 
-	            <span class=""><i><%=question.getQuestioner() %></i></span>
-	            <span id="questionBox"><%= question.getQuestion() %></span><br>
-	        </div>
-	        <div class="">
-	            <textarea id="answerBox" name="answerContent"><%=question.getAnswer() %></textarea>
-	            <button type="submit">update</button>
-	        </div>     
-	      </form>
-	      <br>
+    <tr>
+      <td data-label="No"><%=index_answered++%></td>
+      <td data-label="Questioner"><%=question.getQuestioner() %></td>
+      <td data-label="Question"><%= question.getQuestion() %></td>
+      <td data-label="Action">
+	   <button
+	   onclick="location.href='updatePage.jsp?no=<%=question.getNo()%>'">Update</button> 	   
+	   
+	   <button
+	   onclick="location.href='deletePage.jsp?no=<%=question.getNo()%>'">Delete</button>
+	  </td>
+    </tr>
 	 <%
 	 	}
 	 %>
-</body>
+  
+	</table>
+</div> <!-- end questions -->
+
+</body> 
 </html>
