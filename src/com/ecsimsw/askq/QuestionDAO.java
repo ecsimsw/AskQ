@@ -217,7 +217,6 @@ public class QuestionDAO {
 				String receiver = rs.getString("receiver");
 				String question = rs.getString("question");
 				String answer = rs.getString("answer");
-				System.out.println("no: "+no+ " answer :"+answer);
 				int status = rs.getInt("status");
 					
 				return new QuestionDTO

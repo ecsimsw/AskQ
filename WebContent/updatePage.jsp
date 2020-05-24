@@ -24,10 +24,7 @@
 	       tabindex="5"
 	       name ="questionContent" 
 	       readonly
-	       value =<%=question.getQuestion()%>>
-	      
-	      <%=question.getAnswer()%>
-	       
+	       value ='<%=question.getQuestion()%>'> 
 	      <textarea 
 	       placeholder="Type your Answer here...." 
 	       tabindex="5"

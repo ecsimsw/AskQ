@@ -15,7 +15,7 @@
 <link rel='styleSheet' href ="resource/styleSheet/userQuestionForm.css">
 
   <% 
-      String loginInfo = (String)session.getAttribute("loginInfo"); 
+    String loginInfo = (String)session.getAttribute("loginInfo"); 
   	QuestionDAO questionDAO;
   	ArrayList<QuestionDTO> searched;
   %>
@@ -35,9 +35,9 @@
   <tbody>
     <%
     	questionDAO = QuestionDAO.getInstance();
-   		 searched = questionDAO.searchNewQ("ecsimsw");
+   		//searched = questionDAO.searchNewQ("ecsimsw");
     
-        //searched = questionDAO.searchNewQ(loginInfo);
+        searched = questionDAO.searchNewQ(loginInfo);
 	 	Collections.sort(searched);
 	 	
 	 	int index_newQuestions =1;
@@ -86,10 +86,10 @@
       <td data-label="Questioner"><%=question.getQuestioner() %></td>
       <td data-label="Question"><%= question.getQuestion() %></td>
       <td data-label="Action">
-	   <button
+	   <button class="actionButton"
 	   onclick="location.href='updatePage.jsp?no=<%=question.getNo()%>'">Update</button> 	   
 	   
-	   <button
+	   <button class="actionButton"
 	   onclick="location.href='deletePage.jsp?no=<%=question.getNo()%>'">Delete</button>
 	  </td>
     </tr>
