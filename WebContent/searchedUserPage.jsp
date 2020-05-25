@@ -20,12 +20,7 @@
 	 
 	 
 	 <%-- start non-valid user --%>
-	 
-	 
-	 <script>
-	 	//alert("non existent user");
-	 	//history.go(-1);
-	 </script>
+	
 	 Non Existent User
 	 
 	 
@@ -78,5 +73,6 @@
 	     <%
 		  }
 		 %>
+        </ul>
 </body>
 </html>

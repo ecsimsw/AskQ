@@ -14,7 +14,7 @@
 	   QuestionDTO question = questionDAO.getQuestionByNo(no);
 	
 	%>
-	<link rel='styleSheet' href ="resource/styleSheet/askNewPage.css">
+	<link rel='styleSheet' href ="resource/styleSheet/updateForm.css">
       
      <div class="container">  
 	  <form id="contact" action="updateAction.jsp" method="post">

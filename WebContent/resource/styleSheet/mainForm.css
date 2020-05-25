@@ -9,6 +9,103 @@
   z-index: 1;
 }
 
+
+/*-----start side----*/
+
+html.open {
+  overflow: hidden;
+}
+
+.btn {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  z-index: 1;
+  background-image: url("http://s1.daumcdn.net/cfs.tistory/custom/blog/204/2048858/skin/images/menu.png");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.close {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  background-image: url("http://s1.daumcdn.net/cfs.tistory/custom/blog/204/2048858/skin/images/close.png");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+#menu {
+  width: 200px;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  right: -152px;
+  z-index: 10;
+  background-color: white;
+  text-align: center;
+  transition: All 0.2s ease;
+  -webkit-transition: All 0.2s ease;
+  -moz-transition: All 0.2s ease;
+  -o-transition: All 0.2s ease;
+}
+
+#menu.open {
+  right: 0px;
+}
+
+.page_cover.open {
+  display: block;
+}
+
+.page_cover {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 4;
+  display: none;
+}
+
+/* The sidebar menu */
+.sidenav {
+  width:100%;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 40px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #818181;
+  display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: black;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 10px;}
+}
+
+/*----end side-----*/
+
 .Button {
   margin-top:20px;
   margin-left:15px;
@@ -29,8 +126,8 @@
   }
 
 .Button:hover {
-  background-color: #0084FF;
-  box-shadow: 0px 15px 20px #cee9fd;
+  background-color: #b0b0b0;
+  box-shadow: 0px 15px 20px #e5e5e5;
   color: #fff;
   transform: translateY(-2px);
 }

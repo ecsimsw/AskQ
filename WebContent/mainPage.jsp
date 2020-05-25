@@ -12,7 +12,37 @@
 %>
 <body>
 	<link rel='styleSheet' href ="resource/styleSheet/mainForm.css">
+	
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+	 
 	 <div class="main-page">
+	 	<div class = "sideBar">
+			<div class="btn"></div>
+			<div onclick="history.back();" class="page_cover"></div>
+			<div id="menu">
+			  <div onclick="history.back();" class="close"></div>
+			  <div class="sidenav">
+				  <a href="#">Login</a>
+				  <a href="./README.html">Info</a>
+				  <a href="#">Contact</a>
+				  <a href="README.html">Info</a>
+				  <a href="#">Contact</a>
+				</div>
+			</div>
+		</div>
+		<script>
+			$(".btn").click(function() {
+			  $("#menu,.page_cover,html").addClass("open");
+			  window.location.hash = "#open";
+			});
+
+			window.onhashchange = function() {
+			  if (location.hash != "#open") {
+			    $("#menu,.page_cover,html").removeClass("open");
+			  }
+			};
+		</script>
+		
 <% if(loginInfo ==null){%>
     <button class="Button" type="button" onClick="location.href = 'loginPage.jsp'">Login</button>
 <%}else{ %>
