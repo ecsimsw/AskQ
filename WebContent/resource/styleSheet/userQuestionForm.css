@@ -1,10 +1,18 @@
+
+.main-page {
+  width: 15%;
+  padding: 3% 0 0;
+  margin-top : 85px;
+}
+
+
 body {
   font-family: "Open Sans", sans-serif;
   line-height: 1.25;
 }
 
 .questions{
-	margin: auto;
+  margin: auto;
 	
   margin-top : 3%;
   width: 85%;

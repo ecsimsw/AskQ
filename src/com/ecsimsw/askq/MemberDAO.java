@@ -29,6 +29,42 @@ public class MemberDAO{
 		
 		return memberDAO;
 	}
+	public LinkedList<String> getMemebersIdList(){
+		LinkedList<String> idList = new LinkedList<String>();
+		
+		int result = MemberDAO.USER_NONEXISTENT;
+		
+		Connection conn =null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		String query = "select id from members";
+		
+		try {
+			conn = dataSource.getConnection();
+			stmt = conn.createStatement();
+			
+			rs=stmt.executeQuery(query);
+
+			String id= null;
+			while(rs.next()) {
+			    id =rs.getString("id");
+			    idList.add(id);
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally {
+			try {
+				if(conn != null) conn.close();
+				if(stmt != null) stmt.close();
+				if(rs != null) rs.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return idList;
+	}
+	
 	
 	public int insertMember(MemberDTO newMember) {
 		Connection conn =null;
