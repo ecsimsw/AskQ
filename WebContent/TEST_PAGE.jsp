@@ -83,7 +83,7 @@
 
 				  sideBar.style.backgroundColor = '#f3f4fe'; 
 
-				  // ¹Ù±ù»ö(#f3f4fe)°ú µ¿ÀÏÇÏ°Ô ÇÏ´Ù°¡, »çÀÌµå¹Ù°¡ ¿­·ÈÀ»¶§´Â ÁöÁ¤ÇÑ »ö(white)À¸·Î ¹Ù²Þ
+				  // ë°”ê¹¥ìƒ‰(#f3f4fe)ê³¼ ë™ì¼í•˜ê²Œ í•˜ë‹¤ê°€, ì‚¬ì´ë“œë°”ê°€ ì—´ë ¸ì„ë•ŒëŠ” ì§€ì •í•œ ìƒ‰(white)ìœ¼ë¡œ ë°”ê¿ˆ
 			  }
 			};
 		</script>

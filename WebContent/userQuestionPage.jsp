@@ -17,12 +17,12 @@
 <body> 
    <div class="main-page">
 		<div class = "sideBar">
-			<div class="btn" style="margin-right:90px; background-size:50%"></div>
+			<div class="btn" style="margin-right:70px; background-size:50%"></div>
 				<div onclick="history.back();" class="page_cover"></div>
 				<div id="menu">
 				  <div onclick="history.back();" class="close"></div>
 				  <div class="sidenav">
-				  	  <a href="mainPage.jsp">Main</a>
+				  	  <a href="mainPage.jsp">Home</a>
 					  <a href="myPage.jsp">My Page</a>
 					  <a href="README.html">Info</a>
 					  <a href="https://ecsimsw.tistory.com/">Contact</a>
@@ -48,8 +48,6 @@
 	  	ArrayList<QuestionDTO> searched;
 	  %>
 	 <div class="questions">
-	 <button onclick="location.href='mainPage.jsp'">home</button>
-	 
 	 <table>
 	  <caption>New Questions</caption>
 	  <thead>
@@ -76,10 +74,10 @@
 	      <td data-label="Questioner"><%=question.getQuestioner() %></td>
 	      <td data-label="Question"><%= question.getQuestion() %></td>
 	      <td data-label="Action">
-		   <button
+		   <button class="actionButton"
 		   onclick="location.href='updatePage.jsp?no=<%=question.getNo()%>'">Update</button> 	   
 		   
-		   <button
+		   <button class="actionButton"
 		   onclick="location.href='deletePage.jsp?no=<%=question.getNo()%>'">Delete</button>
 		  </td>
 	    </tr>
