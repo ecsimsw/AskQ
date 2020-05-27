@@ -19,7 +19,7 @@
 		<div class = "sideBar">
 			<div class="btn" style="margin-right:70px; background-size:50%"></div>
 				<div onclick="history.back();" class="page_cover"></div>
-				<div id="menu">
+				<div id="menu" style="opacity:0;">
 				  <div onclick="history.back();" class="close"></div>
 				  <div class="sidenav">
 				  	  <a href="mainPage.jsp">Home</a>
@@ -29,18 +29,7 @@
 				  </div>
 			</div>
 		</div>
-		<script>
-			$(".btn").click(function() {
-			  $("#menu,.page_cover,html").addClass("open");
-			  window.location.hash = "#open";
-			});
-		
-			window.onhashchange = function() {
-			  if (location.hash != "#open") {
-			    $("#menu,.page_cover,html").removeClass("open");
-			  }
-			};
-		</script>
+		<script  src="resource/js/sidebar.js"></script>
 	
 	  <% 
 	    String loginInfo = (String)session.getAttribute("loginInfo"); 

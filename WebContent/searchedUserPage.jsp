@@ -47,7 +47,7 @@
 	 	<div class = "sideBar">
 			<div class="btn"></div>
 			<div onclick="history.back();" class="page_cover"></div>
-			<div id="menu" style=background-color:#f3f4fe;>
+			<div id="menu" style="opacity:0">
 			  <div onclick="history.back();" class="close"></div>
 			  
 			  <div class="sidenav">
@@ -64,37 +64,16 @@
 				</div>
 			</div>
 		</div>
-		<script>
-		  var sideBar = document.getElementById("menu");
-		 
-			$(".btn").click(function() {
-			  //alert("open");
-
-		      sideBar.style.backgroundColor = '#ffffff'; 
-			  $("#menu,.page_cover,html").addClass("open");
-			  window.location.hash = "#open";
-			});
-
-			window.onhashchange = function() {
-		      //alert("close");
-		     
-			  if (location.hash != "#open") {
-			    $("#menu,.page_cover,html").removeClass("open");
-
-				  sideBar.style.backgroundColor = '#f3f4fe'; 
-
-				  // 바깥색(#f3f4fe)과 동일하게 하다가, 사이드바가 열렸을때는 지정한 색(white)으로 바꿈
-			  }
-			};
-		</script>
-		
+		<script  src="resource/js/sidebar.js"></script>
  	  <!-- Side Bar end-->
    		
 
    	  <!-- Searched start -->	
    	  
    	      <h3 id="searchedId"><%= searchedId %></h3>
-   	      <button onclick="location.href='askNewPage.jsp?searchedId=<%=searchedId%>'">ask_temp</button>
+   		  <img src="resource/img/questionAsk.png" id="askButton" 
+   		  onclick="location.href='askNewPage.jsp?searchedId=<%=searchedId%>'">
+   	   
    	  
    	         <% 	
 			    ArrayList<QuestionDTO> searched = questionDAO.searchPublicQ(searchedId);
@@ -105,16 +84,18 @@
 			 
 		  <form id="contact">
 		       <div id=questioner>
-			      <h5><%=question.getQuestioner() %></h5>
+		       <img src="resource/img/anonymous.png" id="questionerImg">
+			      <h5 id="questionerId"><%=question.getQuestioner() %></h5>
 			      
-			      <div id="date" >
-			      	2020-05-20
-			      </div>
+			      <div id="date">2020-05-20</div>
 		      </div>
-		      <img src="resource/img/questiond.png" id="questionImg">
-		      <pre class ="msg question"><%=question.getQuestion() %></pre>
-		      
-		      <pre class ="msg answer"><%=question.getAnswer() %></pre>
+		      <div class=talk>
+			      <img src="resource/img/questiond.png" id="questionImg">
+			      <pre class ="msg question"><%=question.getQuestion() %></pre>
+			      
+			      <img src="resource/img/answer.png" id="answerImg">
+			      <pre class ="msg answer"><%=question.getAnswer() %></pre>
+		      </div>
 		  </form>
 		  
 		  <%} %>

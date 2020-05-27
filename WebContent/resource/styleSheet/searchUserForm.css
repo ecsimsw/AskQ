@@ -19,7 +19,7 @@ body {
   font-size: 12px;
   line-height: 30px;
   color: #777;
-  background: #f3f4fe;
+  background: #ffffff;
 }
 
 .container {
@@ -75,14 +75,16 @@ body {
 
 #questioner{
 	padding-bottom :30px;
+	margin-top:15px;
 }
 
 .msg{
   width: 90%;
-  margin-left:5%;
+  margin-left:35px;
+  
+  margin-top:25px;
   border: 1px solid #ccc;
   background: #FFF;
-  margin: 0 0 5px;
   padding: 10px;
   padding-top:20px;
   padding-bottom:20px;
@@ -99,15 +101,31 @@ body {
 }
 
 .question{
-	margin-top:10px;
 }
 
 .answer{
-	margin-top:10px;
 }
-
+#questionerId{
+	margin-left:15px
+}
 #questionImg{
-	margin-top:27px;
+	margin-top:17px;
 	float:left;
 	width:25px;
+}
+#questionerImg{
+	margin-top:3px;
+	float:left;
+	width:25px;
+}
+#answerImg{
+	margin-top:30px;
+	float:left;
+	width:25px;
+}
+
+#askButton{
+	width:50px;
+	margin-left:87%;
+	min-width: 400px;
 }
