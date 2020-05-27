@@ -54,7 +54,7 @@
 				<a href="mainPage.jsp">Home</a>
 				<% if(loginInfo ==null){%>
 					<a href="loginPage.jsp">Login</a>
-				 <%}else{ %>
+				 <%}else{%>
 					<a href="userQuestionPage.jsp">Questions</a>
 					<a href="myPage.jsp">My Page</a>
 					<a href="logout.jsp">Logout</a>
@@ -94,12 +94,13 @@
    	  <!-- Searched start -->	
    	  
    	      <h3 id="searchedId"><%= searchedId %></h3>
+   	      <button onclick="location.href='askNewPage.jsp?searchedId=<%=searchedId%>'">ask_temp</button>
    	  
    	         <% 	
 			    ArrayList<QuestionDTO> searched = questionDAO.searchPublicQ(searchedId);
 			 	Collections.sort(searched);
 			 	
-			 	for(QuestionDTO question : searched){
+			 	for(QuestionDTO question : searched){ 		
 			 %>
 			 
 		  <form id="contact">
@@ -110,8 +111,8 @@
 			      	2020-05-20
 			      </div>
 		      </div>
-		      
-		      <pre class ="msg question"><%= question.getQuestion() %></pre>
+		      <img src="resource/img/questiond.png" id="questionImg">
+		      <pre class ="msg question"><%=question.getQuestion() %></pre>
 		      
 		      <pre class ="msg answer"><%=question.getAnswer() %></pre>
 		  </form>
