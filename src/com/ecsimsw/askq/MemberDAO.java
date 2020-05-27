@@ -29,6 +29,41 @@ public class MemberDAO{
 		
 		return memberDAO;
 	}
+	
+	public String getPwById(String id) {
+		String pw = null;
+		
+		Connection conn =null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String query = "select pw from members where id=(?)";
+		
+		try {
+			conn = dataSource.getConnection();
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, id);
+			
+			rs=pstmt.executeQuery();
+
+			while(rs.next()) {
+			    pw =rs.getString("pw");
+			}
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally {
+			try {
+				if(conn != null) conn.close();
+				if(pstmt != null) pstmt.close();
+				if(rs != null) rs.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return pw;
+	}
+	
 	public LinkedList<String> getMemebersIdList(){
 		LinkedList<String> idList = new LinkedList<String>();
 		
@@ -137,5 +172,34 @@ public class MemberDAO{
 		}
 		
 		return result;
+	}
+	
+	public int changePwById(String currentId, String newPw) {
+		Connection conn =null;
+		PreparedStatement pstmt = null;
+		String query = "UPDATE members SET pw =(?) WHERE id =(?)";
+		
+		try {
+			conn = dataSource.getConnection();
+			
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, newPw);
+			pstmt.setString(2, currentId);
+			
+			pstmt.executeUpdate();
+		}catch(Exception e){
+			e.printStackTrace();
+
+			return -1;
+		}finally {
+			try {
+				if(conn != null) conn.close();
+				if(pstmt != null) pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return 0;
 	}
 }

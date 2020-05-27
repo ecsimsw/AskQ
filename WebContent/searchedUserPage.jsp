@@ -7,11 +7,11 @@
 <html> 
 <head> 
      <meta charset="utf-8"> 
-     <title>Popup Demo</title> 
+     <title>AnyQ / searched</title> 
 </head> 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel='styleSheet' href ="resource/styleSheet/sidebar.css">
-<link rel='styleSheet' href ="resource/styleSheet/TEST_FORM.css">
+<link rel='styleSheet' href ="resource/styleSheet/searchUserForm.css">
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 	<%

@@ -1,53 +1,95 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@ page import="com.ecsimsw.askq.*" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<%
+   String userId = (String)session.getAttribute("loginInfo");
+   if(userId == null){
+%>
+  <script>
+  	alert("Wrong User Info");
+	history.go(-1);
+  </script>
+<%}%>
+
+<%
+ MemberDAO memberDAO = MemberDAO.getInstance(); 
+ String password = memberDAO.getPwById(userId);
+%>
+			
+
 <body>
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<div class="w3-content w3-container w3-margin-top">
-		<div class="w3-container w3-card-4">
-			<div class="w3-center w3-large w3-margin-top">
-				<h3>My Page</h3>
-			</div>
-			<div>
-				<form id="myForm" action="../member/update_mypage.do" method="post">
-					<p>
-						<label>ID</label> 
-						<input class="w3-input" type="text" id="id" name="id" readonly value="${ member.id }"> 
-					</p>
-					<p>
-						<label>Email</label> 
-						<input class="w3-input" type="text" id="email" name="email" value="${ member.email }" required> 
-					</p>
-					<p class="w3-center">
-						<button type="submit" class="w3-button w3-block w3-black w3-ripple w3-margin-top w3-round">회원정보 변경</button>
-					</p>
-				</form>
-				<br />
-				<form id="pwForm" action="../member/update_pw.do" method="post">	
-					<input type="hidden" name="id" value="${ member.id }">
-					<p>
-						<label>Password</label>
-						<input class="w3-input" id="old_pw" name="old_pw" type="password" required>
-					</p>
-					<p>
-						<label>New Password</label> 
-						<input class="w3-input" id="pw" name="pw" type="password" required>
-					</p>
-					<p>
-						<label>Confirm</label>
-						<input class="w3-input" type="password" id="pw2" type="password" required>
-					</p>
-					<p class="w3-center">
-						<button type="submit" id="joinBtn" class="w3-button w3-block w3-black w3-ripple w3-margin-top w3-round">비밀번호 변경</button>
-					</p>
-				</form>
-			</div>
+	<div class="w3-container w3-card-4">
+		<div class="w3-center w3-large w3-margin-top">
+			<h3>My Page</h3>
+		</div>
+		<div>
+		     <br>
+			 <div class="menu"> <b>회원정보</b> </div>
+			 <br>
+			<form id="pwForm" action="changePassword.jsp" method="post" onsubmit="return memberFormCheck()">	
+				<p>
+				<label>ID</label>
+				<input class="w3-input" type="text" name="id" value="<%=userId %>" readonly>
+				</p>
+			</form>
+			 
+			 <br><br>
+		     <div class="menu"> <b>비밀번호 변경</b> </div>
+		     <br>
+			<form id="pwForm" action="changePassword.jsp" method="post" onsubmit="return memberFormCheck()">	
+				<input type="hidden" name="current_id" value="<%=userId%>">
+				<p>
+					<label>Current Password</label>
+					<input class="w3-input" id="current_pw" name="current_pw" type="password" required>
+				</p>
+				<p>
+					<label>New Password</label> 
+					<input class="w3-input" id="new_pw" name="new_pw" type="password" required>
+				</p>
+				<p>
+					<label>Confirm Password</label>
+					<input class="w3-input" type="password" id="new_pw2" type="password" required>
+				</p>
+				<p class="w3-center">
+					<button type="submit" id="joinBtn" class="w3-button w3-block w3-black w3-ripple w3-margin-top w3-round">비밀번호 변경</button>
+				</p>
+			</form>
+	<script>
+	
+		function memberFormCheck(){
+			var current = document.querySelector('#current_pw');
+			var pw = document.querySelector('#new_pw');
+			var pwc = document.querySelector('#new_pw2');
+			
+			if(current.value != "<%=password%>"){
+				alert('현재 비밀번호를 다시 확인하세요.'); 
+				current.focus();
+				return false;
+				}
+			else if(pw.value =='' || pw.value.length<5){
+				alert('비밀번호는 5자리 이상'); 
+				pw.focus();
+				return false;
+				}
+			else if(pw.value != pwc.value || pwc.value ==''){
+				alert('확인 비밀번호 불일치'); 
+				pwc.focus();
+				return false;
+				}
+		}
+   </script>
 		</div>
 	</div>
+</div>
 </body>
 </html>
