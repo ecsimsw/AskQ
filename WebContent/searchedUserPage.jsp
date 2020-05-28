@@ -70,11 +70,15 @@
 
    	  <!-- Searched start -->	
    	  
-   	      <h3 id="searchedId"><%= searchedId %></h3>
-   		  <img src="resource/img/questionAsk.png" id="askButton" 
-   		  onclick="location.href='askNewPage.jsp?searchedId=<%=searchedId%>'">
-   	   
-   	  
+   		<div id= profile>
+   		  <h3 id="searchedId"><%= searchedId %></h3>
+   		  <pre id="introduce">Hi I'm jinhwan.
+I'm interested in programming, specially in java, jsp/servlet, operating system.
+Welcome all your question. I hope I can help you. </pre>
+   		  <img src="resource/img/conversation.png" id="askImg" onclick="location.href='askNewPage.jsp?searchedId=<%=searchedId%>'">
+   	   </div>
+   	      
+   	      <div id=qna>
    	         <% 	
 			    ArrayList<QuestionDTO> searched = questionDAO.searchPublicQ(searchedId);
 			 	Collections.sort(searched);
@@ -84,7 +88,7 @@
 			 
 		  <form id="contact">
 		       <div id=questioner>
-		       <img src="resource/img/anonymous.png" id="questionerImg">
+		       <img src="resource/img/anonymous.png" id="questionerImg" style="{width:5px;}">
 			      <h5 id="questionerId"><%=question.getQuestioner() %></h5>
 			      
 			      <div id="date">2020-05-20</div>

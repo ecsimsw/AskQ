@@ -64,15 +64,6 @@ body {
   float:left;
 }
 
-#searchedId {
-  text-align: center;
-  margin:auto;
-  padding-bottom:30px;
-  font-size: 30px;
-  font-weight: 300;
-  color:#000000;
-}
-
 #questioner{
 	padding-bottom :30px;
 	margin-top:15px;
@@ -124,8 +115,41 @@ body {
 	width:25px;
 }
 
-#askButton{
-	width:50px;
-	margin-left:87%;
-	min-width: 400px;
+#profile{
+  max-width: 800px;
+  width: 90%;
+  margin:auto;
+  border: 1px solid #ccc;
+  background: #F9F9F9;
+  
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-top: 10px;
+
+  margin-top:10px;
+  margin-bottom : 10px;
+}
+#introduce{
+	overflow: auto;
+    white-space: pre-wrap;
+    margin-top:10px;
+    margin-bottom:5px;
+}
+#searchedId {
+  margin:auto;
+  padding-top:20px;
+  padding-bottom:20px;
+  font-size: 30px;
+  font-weight: 300;
+  color:#000000;
+}
+
+#profileImg{
+	width:80px;
+	border:1px solid #000;
+}
+#askImg{
+	width:80px;
+	margin-left:80%;
 }
