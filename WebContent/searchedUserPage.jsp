@@ -23,7 +23,8 @@
 	
 		MemberDAO memberDAO = MemberDAO.getInstance(); 
 
-	 	if(memberDAO.loginCheck(new MemberDTO(searchedId, " ")) == MemberDAO.USER_NONEXISTENT){
+	 	if(memberDAO.loginCheck(searchedId," ") == MemberDAO.USER_NONEXISTENT){
+	 	// check searched user is valid
 	 %>
 	 
 	 
@@ -72,9 +73,7 @@
    	  
    		<div id= profile>
    		  <h3 id="searchedId"><%= searchedId %></h3>
-   		  <pre id="introduce">Hi I'm jinhwan.
-I'm interested in programming, specially in java, jsp/servlet, operating system.
-Welcome all your question. I hope I can help you. </pre>
+   		  <pre id="introduce"><%= memberDAO.getIntroduceById(searchedId) %> </pre>
    		  <img src="resource/img/conversation.png" id="askImg" onclick="location.href='askNewPage.jsp?searchedId=<%=searchedId%>'">
    	   </div>
    	      
@@ -91,7 +90,7 @@ Welcome all your question. I hope I can help you. </pre>
 		       <img src="resource/img/anonymous.png" id="questionerImg" style="{width:5px;}">
 			      <h5 id="questionerId"><%=question.getQuestioner() %></h5>
 			      
-			      <div id="date">2020-05-20</div>
+			      <div id="date"><%=question.getQuestion_date()%></div>
 		      </div>
 		      <div class=talk>
 			      <img src="resource/img/questiond.png" id="questionImg">

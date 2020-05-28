@@ -1,0 +1,22 @@
+@charset "EUC-KR";
+
+#userId{
+	margin-bottom:10px;
+}
+
+#introduce{
+	padding : 10px;
+	
+    top: 15px;
+    position: relative;
+    
+    resize: none;
+    
+    width :100%;
+	height:150px;
+}
+
+#changeInfoBtn{
+	top: 12px;
+    position: relative;
+}

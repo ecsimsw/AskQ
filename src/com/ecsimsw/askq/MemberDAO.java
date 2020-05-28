@@ -64,10 +64,42 @@ public class MemberDAO{
 		return pw;
 	}
 	
+	public String getIntroduceById(String id) {
+		String pw = null;
+		
+		Connection conn =null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String query = "select introduce from members where id=(?)";
+		
+		try {
+			conn = dataSource.getConnection();
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, id);
+			
+			rs=pstmt.executeQuery();
+
+			while(rs.next()) {
+			    pw =rs.getString("introduce");
+			}
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally {
+			try {
+				if(conn != null) conn.close();
+				if(pstmt != null) pstmt.close();
+				if(rs != null) rs.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return pw;
+	}
+	
 	public LinkedList<String> getMemebersIdList(){
 		LinkedList<String> idList = new LinkedList<String>();
-		
-		int result = MemberDAO.USER_NONEXISTENT;
 		
 		Connection conn =null;
 		Statement stmt = null;
@@ -101,21 +133,25 @@ public class MemberDAO{
 	}
 	
 	
-	public int insertMember(MemberDTO newMember) {
+	public int insertMember(String new_id, String new_pw) {
 		Connection conn =null;
 		PreparedStatement pstmt = null;
-		String query = "insert into members values (?,?)";
+		String query = "insert into members (id,pw,introduce,status,icon) values (?,?,?,?,?)";
 		
 		try {
 			conn = dataSource.getConnection();
 			
 			pstmt = conn.prepareStatement(query);
-			pstmt.setString(1, newMember.getId());
-			pstmt.setString(2, newMember.getPw());
+			pstmt.setString(1, new_id);
+			pstmt.setString(2, new_pw);
+			pstmt.setString(3, "Welcome!"); // delfault introduce is welcome
+			pstmt.setInt(4, 0);    // defautl status is 0
+			pstmt.setInt(5, 0);    // default icon is 0
 			
 			pstmt.executeUpdate();
 		}catch(Exception e){
 			e.printStackTrace();
+			return -1;
 		}finally {
 			try {
 				if(conn != null) conn.close();
@@ -132,7 +168,7 @@ public class MemberDAO{
 	public static int WRONG_PASSWORD = 2;
 	public static int VALID_USER = 0;
 	
-	public int loginCheck(MemberDTO inputMember) {
+	public int loginCheck(String inputId, String inputPw) {
 		int result = MemberDAO.USER_NONEXISTENT;
 		
 		Connection conn =null;
@@ -144,7 +180,7 @@ public class MemberDAO{
 			conn = dataSource.getConnection();
 			
 			pstmt = conn.prepareStatement(query);
-			pstmt.setString(1, inputMember.getId());
+			pstmt.setString(1, inputId);
 			
 			rs = pstmt.executeQuery();
 			
@@ -157,7 +193,7 @@ public class MemberDAO{
 			}
 			
 			if(id == null) return MemberDAO.USER_NONEXISTENT;
-			else if(!inputMember.getPw().equals(pw)) return MemberDAO.WRONG_PASSWORD;
+			else if(!inputPw.equals(pw)) return MemberDAO.WRONG_PASSWORD;
 			else { return MemberDAO.VALID_USER;}
 		}catch(Exception e){
 			e.printStackTrace();
@@ -185,6 +221,35 @@ public class MemberDAO{
 			pstmt = conn.prepareStatement(query);
 			pstmt.setString(1, newPw);
 			pstmt.setString(2, currentId);
+			
+			pstmt.executeUpdate();
+		}catch(Exception e){
+			e.printStackTrace();
+
+			return -1;
+		}finally {
+			try {
+				if(conn != null) conn.close();
+				if(pstmt != null) pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return 0;
+	}
+	
+	public int changeIntroduceById(String id, String introduce) {
+		Connection conn =null;
+		PreparedStatement pstmt = null;
+		String query = "UPDATE members SET introduce =(?) WHERE id =(?)";
+		
+		try {
+			conn = dataSource.getConnection();
+			
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, introduce);
+			pstmt.setString(2, id);
 			
 			pstmt.executeUpdate();
 		}catch(Exception e){

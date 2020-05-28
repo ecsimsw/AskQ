@@ -52,7 +52,7 @@
 	    	questionDAO = QuestionDAO.getInstance();
 	   		//searched = questionDAO.searchNewQ("ecsimsw");
 	    
-	        searched = questionDAO.searchNewQ(loginInfo);
+	        searched = questionDAO.searchPrivateQ(loginInfo);
 		 	Collections.sort(searched);
 		 	
 		 	int index_newQuestions =1;

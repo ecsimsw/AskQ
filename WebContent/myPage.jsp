@@ -9,6 +9,7 @@
 <title>Insert title here</title>
 </head>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="resource/styleSheet/myPageForm.css">
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <%
    String userId = (String)session.getAttribute("loginInfo");
@@ -22,7 +23,6 @@
 
 <%
  MemberDAO memberDAO = MemberDAO.getInstance(); 
- String password = memberDAO.getPwById(userId);
 %>
 			
 
@@ -36,11 +36,15 @@
 		     <br>
 			 <div class="menu"> <b>회원정보</b> </div>
 			 <br>
-			<form id="pwForm" action="changePassword.jsp" method="post" onsubmit="return memberFormCheck()">	
+			<form id="pwForm" action="changeUserInfo.jsp" method="post">	
 				<p>
 				<label>ID</label>
-				<input class="w3-input" type="text" name="id" value="<%=userId %>" readonly>
-				</p>
+				<input class="w3-input" id="userId" type="text" name="id" value="<%=userId %>" readonly>
+				<label style="{position:relative; top:5px;}">Introduce</label><br>
+				<textarea tabindex="5" id="introduce" name ="introduce" required><%=memberDAO.getIntroduceById(userId) %></textarea>
+				<button type="submit" id="changeInfoBtn" class="w3-button w3-block w3-black w3-ripple w3-margin-top w3-round">회원 정보 변경</button>
+
+					
 			</form>
 			 
 			 <br><br>
@@ -70,7 +74,7 @@
 			var current = document.querySelector('#current_pw');
 			var pw = document.querySelector('#new_pw');
 			var pwc = document.querySelector('#new_pw2');
-			
+			<% String password = memberDAO.getPwById(userId);%>
 			if(current.value != "<%=password%>"){
 				alert('현재 비밀번호를 다시 확인하세요.'); 
 				current.focus();

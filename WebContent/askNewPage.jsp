@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>Ask</title>
 </head>
 
 	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -15,7 +15,7 @@
       
      <div class="container">  
 	  <form id="contact" action="ask.jsp" method="post">
-	    <h3>Ask to <%=searchedId %></h3>
+	    <h3>Ask <%=searchedId %></h3>
 	      <input type="hidden" id ="searchedUser" name="searchedUser" value=<%=searchedId%>>
 	      <input placeholder="Type your name" type="text" 
 	      name ="questioner" tabindex="1" required autofocus>

@@ -24,7 +24,7 @@ body {
 }
 
 .container {
-  max-width: 400px;
+  max-width: 800px;
   width: 100%;
   margin: 0 auto;
   position: relative;
@@ -39,6 +39,7 @@ body {
 }
 
 #contact h3 {
+  margin-top:10px;
   display: block;
   font-size: 30px;
   font-weight: 300;
@@ -48,6 +49,8 @@ body {
 
 #contact input[type="text"],
 #contact textarea {
+  margin-top:10px;
+  margin-bottom:10px;
   width: 100%;
   border: 1px solid #ccc;
   background: #FFF;

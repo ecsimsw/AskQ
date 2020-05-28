@@ -7,7 +7,7 @@
   String inputId = (String)request.getParameter("id");
   String inputPw = (String)request.getParameter("pw");
   
-  int result = memberDAO.loginCheck(new MemberDTO(inputId, inputPw));
+  int result = memberDAO.loginCheck(inputId, inputPw);
   
   if(result ==MemberDAO.VALID_USER){
 	  session.setAttribute("loginInfo", inputId);

@@ -35,16 +35,18 @@ public class QuestionDAO {
 	public int insertQuestion(QuestionDTO question) {
 		Connection conn =null;
 		PreparedStatement pstmt = null;
-		String query = "INSERT INTO questions (questioner, receiver, question, answer, status) VALUES (?,?,?,?,?)";
+		String query = "INSERT INTO questions (questioner, questioner_type, question_date, receiver, question, answer, status) VALUES (?,?,?,?,?,?,?)";
 		
 		try {
 			conn = dataSource.getConnection();
 			pstmt = conn.prepareStatement(query);
 			pstmt.setString(1, question.getQuestioner());
-			pstmt.setString(2,question.getReceiver());
-			pstmt.setString(3, question.getQuestion());
-			pstmt.setString(4,question.getAnswer());
-			pstmt.setInt(5,question.getStatus());
+			pstmt.setInt(2,question.getQuestioner_type());   
+			pstmt.setString(3, question.getQuestion_date());
+			pstmt.setString(4,question.getReceiver());
+			pstmt.setString(5, question.getQuestion());
+			pstmt.setString(6,question.getAnswer());
+			pstmt.setInt(7,question.getStatus());
 			
 			pstmt.executeUpdate();
 		}catch(Exception e){
@@ -107,13 +109,23 @@ public class QuestionDAO {
 			while(rs.next()) {
 				int no = rs.getInt("no");
 				String questioner = rs.getString("questioner");
+				int questioner_type = rs.getInt("questioner_type");
+				String question_date = rs.getString("question_date");
 				String receiver = rs.getString("receiver");
 				String question = rs.getString("question");
 				String answer = rs.getString("answer");
 				int status = rs.getInt("status");
 				
 				searchedContent.add(
-				new QuestionDTO(no,questioner,receiver,question,answer,status)
+				new QuestionDTO(
+						no,
+						questioner,
+						questioner_type,
+						question_date,				
+						receiver,
+						question,
+						answer,
+						status)
 				);
 			}
 		}catch(Exception e){
@@ -130,7 +142,7 @@ public class QuestionDAO {
 		return searchedContent;
 	}
 	
-	public ArrayList<QuestionDTO> searchNewQ(String searchedUser) {
+	public ArrayList<QuestionDTO> searchPrivateQ(String searchedUser) {
 		Connection conn =null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -149,13 +161,23 @@ public class QuestionDAO {
 			while(rs.next()) {
 				int no = rs.getInt("no");
 				String questioner = rs.getString("questioner");
+				int questioner_type = rs.getInt("questioner_type");
+				String question_date = rs.getString("question_date");
 				String receiver = rs.getString("receiver");
 				String question = rs.getString("question");
 				String answer = rs.getString("answer");
 				int status = rs.getInt("status");
 				
 				searchedContent.add(
-				new QuestionDTO(no,questioner,receiver,question,answer,status)
+				new QuestionDTO(
+						no,
+						questioner,
+						questioner_type,
+						question_date,				
+						receiver,
+						question,
+						answer,
+						status)
 				);
 			}
 		}catch(Exception e){
@@ -214,13 +236,22 @@ public class QuestionDAO {
 			
 			while(rs.next()) {
 				String questioner = rs.getString("questioner");
+				int questioner_type = rs.getInt("questioner_type");
+				String question_date = rs.getString("question_date");
 				String receiver = rs.getString("receiver");
 				String question = rs.getString("question");
 				String answer = rs.getString("answer");
 				int status = rs.getInt("status");
 					
-				return new QuestionDTO
-						(no,questioner,receiver,question,answer,status);
+				return new QuestionDTO(
+						no,
+						questioner,
+						questioner_type,
+						question_date,				
+						receiver,
+						question,
+						answer,
+						status);
 			}
 		}catch(Exception e){
 			e.printStackTrace();

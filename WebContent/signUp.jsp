@@ -8,8 +8,7 @@
   String inputId = (String)request.getParameter("id");
   String inputPw = (String)request.getParameter("pw");
   
-  MemberDTO newRegisterMember = new MemberDTO(inputId, inputPw);
-  int result = memberDAO.loginCheck(newRegisterMember);
+  int result = memberDAO.loginCheck(inputId, inputPw);
   
   if(result != MemberDAO.USER_NONEXISTENT){ 
  %>
@@ -19,13 +18,13 @@
   </script>
 <%
   }else{
-    memberDAO.insertMember(newRegisterMember);
+    memberDAO.insertMember(inputId, inputPw);
  %>  
   <script language="javascript">
   	alert("Welcome!!");
   </script>  
 <%
-	session.setAttribute("loginInfo", newRegisterMember.getId());
+	session.setAttribute("loginInfo", inputId);
 	response.sendRedirect("mainPage.jsp");
   }
 %>

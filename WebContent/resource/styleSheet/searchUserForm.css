@@ -16,7 +16,7 @@
 body {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-weight: 100;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 30px;
   color: #777;
   background: #ffffff;
@@ -74,8 +74,7 @@ body {
   margin-left:35px;
   
   margin-top:25px;
-  border: 1px solid #ccc;
-  background: #FFF;
+  background: #F9F9F9;
   padding: 10px;
   padding-top:20px;
   padding-bottom:20px;
@@ -84,11 +83,19 @@ body {
   -webkit-transition: border-color 0.3s ease-in-out;
   -moz-transition: border-color 0.3s ease-in-out;
   transition: border-color 0.3s ease-in-out;
-  border: 1px solid #aaa;
+  border: 1px solid #8b857f73;
   
   color :#000;
   max-width: 100%;
   height:auto;
+  
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+  
+  line-height :35px;
+  font-size: 14px;
+  
 }
 
 .question{
@@ -100,7 +107,7 @@ body {
 	margin-left:15px
 }
 #questionImg{
-	margin-top:17px;
+	margin-top:25px;
 	float:left;
 	width:25px;
 }
@@ -110,7 +117,7 @@ body {
 	width:25px;
 }
 #answerImg{
-	margin-top:30px;
+	margin-top:35px;
 	float:left;
 	width:25px;
 }
@@ -133,8 +140,13 @@ body {
 #introduce{
 	overflow: auto;
     white-space: pre-wrap;
+    word-break: break-all;
+    
     margin-top:10px;
     margin-bottom:5px;
+    
+    font-size:14px;
+    padding:10px;
 }
 #searchedId {
   margin:auto;

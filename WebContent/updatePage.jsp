@@ -18,19 +18,23 @@
       
      <div class="container">  
 	  <form id="contact" action="updateAction.jsp" method="post">
-	    <h3>From <%=question.getQuestioner() %></h3>
+	    <h3 id="from">From</h3>
+	    <h1><%=question.getQuestioner() %></h1>
+	    
+	    
+	    <h3 id="title">Question</h3>
 	      <input type=hidden name='no' value='<%=question.getNo()%>'>
-	      <input type="text" 
-	       tabindex="5"
-	       name ="questionContent" 
-	       readonly
-	       value ='<%=question.getQuestion()%>'> 
+	      <pre id ="questionContent"><%=question.getQuestion()%></pre>
+	    
+	    
+	    <h3 id="title">Answer</h3>
 	      <textarea 
 	       placeholder="Type your Answer here...." 
 	       tabindex="5"
 	       name ="answerContent" 
 	       required><%if(question.getAnswer()!=null){%><%=question.getAnswer()%>
 	        <%}%></textarea>
+	      
 	      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
 	  </form>
 	</div>

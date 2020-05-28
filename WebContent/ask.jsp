@@ -2,17 +2,33 @@
     pageEncoding="EUC-KR"%>
 <%@ page import="com.ecsimsw.askq.*" %>
 <%@ page import="java.util.*" %> 
+<%@ page import="java.text.SimpleDateFormat" %>
+
 <%
 	QuestionDAO questionDAO = QuestionDAO.getInstance();
 
 	int no = 0;
 	String questioner = request.getParameter("questioner");
+	int questioner_type = 0; // user or non-user
+	
+	SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
+	String question_date = date.format(new Date());
+	// get date yyyy-mm-dd
+	
 	String receiver = request.getParameter("searchedUser");
 	String question = request.getParameter("questionContent");
-	String answer = null;
-	int status = 0;
 	
-	int r = questionDAO.insertQuestion(new QuestionDTO(no,questioner,receiver,question,answer,status));
+	int r = questionDAO.insertQuestion(
+			new QuestionDTO(
+					0,     // default no
+					questioner,
+					questioner_type,
+					question_date,
+					receiver,
+					question,
+					null,  // default answer
+					0)     // default status
+			);
 
 	if(r == 0){
 %>
