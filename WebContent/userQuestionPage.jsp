@@ -8,7 +8,7 @@
 <html> 
 <head> 
      <meta charset="utf-8"> 
-     <title>userQuestion</title> 
+     <title>Questions</title> 
 </head> 
 <link rel='styleSheet' href ="resource/styleSheet/userQuestionForm.css">
 <link rel='styleSheet' href ="resource/styleSheet/sidebar.css">

@@ -7,16 +7,18 @@
 
 <%
 	QuestionDAO questionDAO = QuestionDAO.getInstance();
-
+	MemberDAO memberDAO = MemberDAO.getInstance();
+	
 	int no = 0;
 	String questioner = request.getParameter("questioner");
-	int questioner_type = 0; // user or non-user
+	int questioner_type = (request.getParameter("isAnonymous")==null? 1:0);
 	
 	SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
 	String question_date = date.format(new Date());
 	// get date yyyy-mm-dd
 	
 	String receiver = request.getParameter("searchedUser");
+	
 	String question = request.getParameter("questionContent");
 	
 	int r = questionDAO.insertQuestion(
@@ -31,6 +33,8 @@
 					0)     // default status
 			);
 
+	memberDAO.changeAskedById(receiver, memberDAO.getAskedById(receiver)+1);
+	
 	if(r == 0){
 %>
 <script>

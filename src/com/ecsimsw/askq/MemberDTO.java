@@ -8,15 +8,39 @@ public class MemberDTO {
 	String introduce = null;
 	int status;
 	int icon;
+	int asked;
+	int answered;
 	
 	
-	public MemberDTO(int no, String id, String pw, String introduce, int status, int icon) {
+	public MemberDTO(int no, String id, String pw, String introduce, int status, int icon, int asked, int answered) {
 		this.no = no;
 		this.id = id;
 		this.pw = pw;
 		this.introduce = introduce;
 		this.status = status;
 		this.icon = icon;
+		this.answered = answered;
+		this.asked = asked;
+	}
+
+
+	public int getAsked() {
+		return asked;
+	}
+
+
+	public void setAsked(int asked) {
+		this.asked = asked;
+	}
+
+
+	public int getAnswered() {
+		return answered;
+	}
+
+
+	public void setAnswered(int answered) {
+		this.answered = answered;
 	}
 
 

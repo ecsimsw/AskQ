@@ -52,11 +52,11 @@ body {
 }
 #date{
 	float:right;
+	margin-right:5%;
 }
 
 #contact h5 {
   display: block;
-  font-size: 15px;
   font-weight: 300;
   margin-top:0px;
   margin-bottom:0px;
@@ -71,7 +71,7 @@ body {
 
 .msg{
   width: 90%;
-  margin-left:35px;
+  margin-left:45px;
   
   margin-top:25px;
   background: #F9F9F9;
@@ -104,22 +104,23 @@ body {
 .answer{
 }
 #questionerId{
-	margin-left:15px
+	margin-left:15px;
+	font-size: 20px;
 }
 #questionImg{
 	margin-top:25px;
 	float:left;
-	width:25px;
+	width:30px;
 }
 #questionerImg{
 	margin-top:3px;
 	float:left;
-	width:25px;
+	width:30px;
 }
 #answerImg{
 	margin-top:35px;
 	float:left;
-	width:25px;
+	width:30px;
 }
 
 #profile{

@@ -2,6 +2,7 @@
     pageEncoding="EUC-KR"%>
 <%@ page import="com.ecsimsw.askq.*" %>
 <%@ page import="java.util.*"  %>
+<% request.setCharacterEncoding("euc-kr");%>
 
 <!DOCTYPE html> 
 <html> 
@@ -74,6 +75,9 @@
    	  
    		<div id= profile>
    		  <h3 id="searchedId"><%= searchedId %></h3>
+   		  <div style="float:right;">
+   		  <%=memberDAO.getAskedById(searchedId)%>/<%=memberDAO.getAnsweredById(searchedId)%>
+   		  </div>
    		  <pre id="introduce"><%= memberDAO.getIntroduceById(searchedId) %> </pre>
    		  <img src="resource/img/conversation.png" id="askImg" onclick="location.href='askNewPage.jsp?searchedId=<%=searchedId%>'">
    	   </div>
@@ -88,9 +92,15 @@
 			 
 		  <form id="contact">
 		       <div id=questioner>
-		       <img src="resource/img/anonymous.png" id="questionerImg" style="{width:5px;}">
-			      <h5 id="questionerId"><%=question.getQuestioner() %></h5>
-			      
+		     
+		      <%if(question.getQuestioner_type() == 0){ %>
+		      	  <img src="resource/img/icon/anonymous.png" id="questionerImg" >
+			      <h5 id="questionerId"><i><%=question.getQuestioner()%></i></h5>
+			  <%}else if(question.getQuestioner_type() == 1){%>
+			      <img src="resource/img/icon/default.png" id="questionerImg">
+			      <h5 id="questionerId" style="color:black;" onclick="location.href='searchedUserPage.jsp?searchedUser=<%=question.getQuestioner()%>'">
+			      <i><%=question.getQuestioner()%></i></h5>
+			  <%}%>
 			      <div id="date"><%=question.getQuestion_date()%></div>
 		      </div>
 		      <div class=talk>
@@ -107,5 +117,6 @@
 		</div>
    	</div>
    	<%} %>
+   	</div>
 </body> 
 </html>

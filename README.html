@@ -92,9 +92,11 @@ mysql> DESC members;
 | no        | int         | NO   | PRI | NULL    | auto_increment |
 | id        | varchar(11) | YES  |     | NULL    |                |
 | pw        | varchar(11) | YES  |     | NULL    |                |
-| introtuce | text        | YES  |     | NULL    |                |
+| introduce | text        | YES  |     | NULL    |                |
 | status    | int         | YES  |     | NULL    |                |
 | icon      | int         | YES  |     | NULL    |                |
+| asked     | int         | YES  |     | NULL    |                |
+| answered  | int         | YES  |     | NULL    |                |
 +-----------+-------------+------+-----+---------+----------------+
 status
 
@@ -122,13 +124,11 @@ icon
 questioner_type
 
 0 : non-user
-
 1 : user
 
 status
 
 0 : nonAnswered, non-public
-
 1 : Answered, public
 
 </pre>

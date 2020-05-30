@@ -136,7 +136,7 @@ public class MemberDAO{
 	public int insertMember(String new_id, String new_pw) {
 		Connection conn =null;
 		PreparedStatement pstmt = null;
-		String query = "insert into members (id,pw,introduce,status,icon) values (?,?,?,?,?)";
+		String query = "insert into members (id,pw,introduce,status,icon, asked, answered) values (?,?,?,?,?,?,?)";
 		
 		try {
 			conn = dataSource.getConnection();
@@ -147,6 +147,8 @@ public class MemberDAO{
 			pstmt.setString(3, "Welcome!"); // delfault introduce is welcome
 			pstmt.setInt(4, 0);    // defautl status is 0
 			pstmt.setInt(5, 0);    // default icon is 0
+			pstmt.setInt(6, 0);    // defautl asked is 0
+			pstmt.setInt(7, 0);    // default answered is 0
 			
 			pstmt.executeUpdate();
 		}catch(Exception e){
@@ -238,7 +240,130 @@ public class MemberDAO{
 		
 		return 0;
 	}
+
+	public int getAskedById(String id) {
+		Connection conn =null;
+		PreparedStatement pstmt = null;
+		String query = "select asked from members WHERE id =(?)";
+		ResultSet rs = null;
+		int asked = -1;
+		
+		try {
+			conn = dataSource.getConnection();
+			
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, id);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				asked = rs.getInt("asked");
+			}
+			return asked;
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally {
+			try {
+				if(conn != null) conn.close();
+				if(pstmt != null) pstmt.close();
+				if(rs != null) rs.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return asked;
+	}
 	
+	public int getAnsweredById(String id) {
+		Connection conn =null;
+		PreparedStatement pstmt = null;
+		String query = "select answered from members WHERE id =(?)";
+		ResultSet rs = null;
+		int answered = -1;
+		
+		try {
+			conn = dataSource.getConnection();
+			
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, id);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				answered = rs.getInt("answered");
+			}
+			return answered;
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally {
+			try {
+				if(conn != null) conn.close();
+				if(pstmt != null) pstmt.close();
+				if(rs != null) rs.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return answered;
+	}
+
+	public int changeAskedById(String id, int asked) {
+		Connection conn =null;
+		PreparedStatement pstmt = null;
+		String query = "UPDATE members SET asked =(?) WHERE id =(?)";
+		
+		try {
+			conn = dataSource.getConnection();
+			
+			pstmt = conn.prepareStatement(query);
+			pstmt.setInt(1, asked);
+			pstmt.setString(2, id);
+			
+			pstmt.executeUpdate();
+		}catch(Exception e){
+			e.printStackTrace();
+
+			return -1;
+		}finally {
+			try {
+				if(conn != null) conn.close();
+				if(pstmt != null) pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return 0;
+	}
+	public int changeAnswereddById(String id, int answered) {
+		Connection conn =null;
+		PreparedStatement pstmt = null;
+		String query = "UPDATE members SET answered =(?) WHERE id =(?)";
+		
+		try {
+			conn = dataSource.getConnection();
+			
+			pstmt = conn.prepareStatement(query);
+			pstmt.setInt(1, answered);
+			pstmt.setString(2, id);
+			
+			pstmt.executeUpdate();
+		}catch(Exception e){
+			e.printStackTrace();
+
+			return -1;
+		}finally {
+			try {
+				if(conn != null) conn.close();
+				if(pstmt != null) pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return 0;
+	}
+
 	public int changeIntroduceById(String id, String introduce) {
 		Connection conn =null;
 		PreparedStatement pstmt = null;

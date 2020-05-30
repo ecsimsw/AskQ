@@ -2,6 +2,7 @@
     pageEncoding="EUC-KR"%>
 
 <%@ page import="com.ecsimsw.askq.*" %>
+<% request.setCharacterEncoding("euc-kr");%>
 
 <%
 	String id = request.getParameter("id");
@@ -22,6 +23,6 @@
  %>
  <script>
  alert("succeed");
+ history.back();
  </script>
- <%
- response.sendRedirect("mainPage.jsp");}%>
+ <%}%>
