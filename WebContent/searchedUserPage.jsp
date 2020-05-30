@@ -13,6 +13,7 @@
 <link rel='styleSheet' href ="resource/styleSheet/sidebar.css">
 <link rel='styleSheet' href ="resource/styleSheet/searchUserForm.css">
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<% request.setCharacterEncoding("euc-kr");%>
 
 	<%
 	   String loginInfo = (String)session.getAttribute("loginInfo");
@@ -60,7 +61,7 @@
 					<a href="myPage.jsp">My Page</a>
 					<a href="logout.jsp">Logout</a>
 				<%}%>
-				  <a href="README.html">Info</a>
+				  <a href="aboutPage.jsp">About</a>
 				  <a href="https://ecsimsw.tistory.com/">Contact</a>
 				</div>
 			</div>

@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="resource/styleSheet/myPageForm.css">
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<% request.setCharacterEncoding("euc-kr");%>
 <%
    String userId = (String)session.getAttribute("loginInfo");
    if(userId == null){
@@ -26,12 +27,31 @@
 %>
 			
 
+<link rel='styleSheet' href ="resource/styleSheet/sidebar.css">
 <body>
 	<div class="w3-content w3-container w3-margin-top">
 	<div class="w3-container w3-card-4">
 		<div class="w3-center w3-large w3-margin-top">
 			<h3>My Page</h3>
 		</div>
+		<div class = "sideBar">
+			<div class="btn"></div>
+			<div onclick="history.back();" class="page_cover"></div>
+			<div id="menu" style="opacity:0">
+			  <div onclick="history.back();" class="close"></div>
+			  
+			  <div class="sidenav">
+				<a href="mainPage.jsp">Home</a>
+				<a href="userQuestionPage.jsp">Questions</a>
+				<a href="myPage.jsp">My Page</a>
+			   	<a href="logout.jsp">Logout</a>
+		    	  <a href="aboutPage.jsp">About</a>
+			      <a href="https://ecsimsw.tistory.com/">Contact</a>
+				</div>
+			</div>
+		</div>
+		<script  src="resource/js/sidebar.js"></script>
+		
 		<div>
 		     <br>
 			 <div class="menu"> <b>회원정보</b> </div>

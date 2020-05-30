@@ -3,6 +3,7 @@
 <%@ page import="com.ecsimsw.askq.*" %>
 <%@ page import="java.util.*" %> 
 <%@ page import="java.text.SimpleDateFormat" %>
+<% request.setCharacterEncoding("euc-kr");%>
 
 <%
 	QuestionDAO questionDAO = QuestionDAO.getInstance();

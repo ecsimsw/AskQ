@@ -37,7 +37,7 @@
 	<a href="myPage.jsp">My Page</a>
 	<a href="logout.jsp">Logout</a>
 <%}%>
-				  <a href="README.html">Info</a>
+				  <a href="aboutPage.jsp">About</a>
 				  <a href="https://ecsimsw.tistory.com/">Contact</a>
 				</div>
 			</div>

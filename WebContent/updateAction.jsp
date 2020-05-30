@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-    
+<% request.setCharacterEncoding("euc-kr");%>
 <%@ page import="com.ecsimsw.askq.*" %>
 <%
 	QuestionDAO questionDAO = QuestionDAO.getInstance();

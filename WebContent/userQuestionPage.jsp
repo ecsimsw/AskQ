@@ -2,6 +2,7 @@
     pageEncoding="EUC-KR"%>
 <%@ page import="com.ecsimsw.askq.*" %>
 <%@ page import="java.util.*"  %>
+<% request.setCharacterEncoding("euc-kr");%>
 
 <!DOCTYPE html> 
 <html> 
@@ -24,7 +25,7 @@
 				  <div class="sidenav">
 				  	  <a href="mainPage.jsp">Home</a>
 					  <a href="myPage.jsp">My Page</a>
-					  <a href="README.html">Info</a>
+					  <a href="aboutPage.jsp">About</a>
 					  <a href="https://ecsimsw.tistory.com/">Contact</a>
 				  </div>
 			</div>
