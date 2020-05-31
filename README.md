@@ -33,7 +33,8 @@
 5. 유저의 질문과 답변 목록    
 ![searchedPage](/screenshots/searchedPage.PNG)
 
-6. 질문하기
+6. 질문하기  
+![ask](/screenshots/질문하기.PNG)
 
 7. 내 질문 내역  
 ![myQuestions](/screenshots/myQuestions.PNG)
