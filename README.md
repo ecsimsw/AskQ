@@ -16,6 +16,7 @@
   
      답변자는 질문자의 로그인 여부에 상관없이 본인 아이디만 홍보하면 사람들이 질문을 남길 수 있는 기능이 핵심이었습니다.
   
+    
 블로그 : https://ecsimsw.tistory.com/
 
 깃허브 : https://github.com/ecsimsw
@@ -44,7 +45,7 @@ Jquery : jQuery JavaScript Library v3.5.1
 
 2. 사이드 바    
 
-![sideBar2](https://user-images.githubusercontent.com/46060746/83357346-c8623780-a3a6-11ea-90a6-e9b270c58c15.PNG)
+![sideBar2](/screenshots/sidebar.png)
 
 3. 로그인과 회원 가입    
 
