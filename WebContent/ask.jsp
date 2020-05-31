@@ -11,7 +11,7 @@
 	
 	int no = 0;
 	String questioner = request.getParameter("questioner");
-	int questioner_type = (request.getParameter("isAnonymous")==null? 1:0);
+	int questioner_type = (request.getParameter("isAnonymous")=="true"? 0:1);
 	
 	SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
 	String question_date = date.format(new Date());

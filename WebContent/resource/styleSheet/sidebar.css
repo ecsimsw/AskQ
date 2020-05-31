@@ -85,16 +85,11 @@ html.open {
   color: #818181;
   display: block;
 }
-#noNewArrived{
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 15px;
-  color: #818181;
-  display: block;
-}
+
 #newArrived{
   color:#0080ff;;
 }
+
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
   color: black;

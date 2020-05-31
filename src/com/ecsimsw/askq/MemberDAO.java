@@ -132,7 +132,6 @@ public class MemberDAO{
 		return idList;
 	}
 	
-	
 	public int insertMember(String new_id, String new_pw) {
 		Connection conn =null;
 		PreparedStatement pstmt = null;

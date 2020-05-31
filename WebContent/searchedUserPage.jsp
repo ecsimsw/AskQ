@@ -82,10 +82,12 @@
    	  
    		<div id= profile>
    		  <h3 id="searchedId"><%= searchedId %></h3>
-   		  <div style="float:right;">
+   		  <pre id="introduce"><%= memberDAO.getIntroduceById(searchedId) %> </pre>
+   		  
+   		  <div id="askedAnswered">
    		  <%=memberDAO.getAskedById(searchedId)%>/<%=memberDAO.getAnsweredById(searchedId)%>
    		  </div>
-   		  <pre id="introduce"><%= memberDAO.getIntroduceById(searchedId) %> </pre>
+   		  
    		  <img src="resource/img/conversation.png" id="askImg" onclick="location.href='askNewPage.jsp?searchedId=<%=searchedId%>'">
    	   </div>
    	      

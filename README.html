@@ -1,39 +1,42 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="EUC-KR">
-<title>AnyQ</title>
-</head>
-
-<body>
-<pre>
 ---- Info ----
 
 김진환
 
-JSP, Servlet 연습
+목적 :
+  
+  1. JSP, Servlet / JDBC (mySql)을 연습하고 싶었습니다.
+  
+  2. 블로그에 사람들이 질문을 남겨주시는 걸 보고,
+     유튜버와 구독자 / 스타와 팬 / 블로거와 방문자 의 관계에서 좀 더 자유롭게 질문을 남기고 답변하는 서비스가 있으면
+     좋을 것 같아서 만들게 되었습니다.
 
 블로그 : https://ecsimsw.tistory.com/
 
 깃허브 : https://github.com/ecsimsw
 
+제작 : 2020.05
+
 
 ---- To do ----
 
-1. DB 칼럼 다시 / text
+앞으로 더 추가할 기능 들
 
-  - members : 인덱스 추가, 닉네임, newArrived
+1. 회원 검색 
+
+  - 다른 답변에 좋아요 기능 
   
-  - questions : no를 인덱스로 추가, 날짜 추가
+  - 좋아요 순서, 질문자 등록 순서, 답변 등록 순서로 정렬
+
+2. 사용자 아이콘 선택 
   
-
-2. DAO 쿼리에 특수 문자 처리
-
 3. 파일, 변수명 리펙토링
 
-4. 마이 페이지 기능 / 회원 삭제
+4. 회원 삭제
 
-5. 알림
+
+---- 버젼 정보 ----
+
+
 
 
 ---- style 정보 ----
@@ -61,6 +64,8 @@ JSP, Servlet 연습
  - int insertMember(String new_id, String new_pw)
  - int loginCheck(String inputId, String inputPw)
  - int changePwById(String currentId, String newPw)
+ - int getAnsweredById(String id)
+ - int changeAskedById(String id, int asked)
  - int changeIntroduceById(String id, String introduce)
  - String getIntroduceById(String id)
  
@@ -130,7 +135,3 @@ status
 
 0 : nonAnswered, non-public
 1 : Answered, public
-
-</pre>
-</body>
-</html>
