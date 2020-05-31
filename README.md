@@ -12,7 +12,20 @@
 
 깃허브 : https://github.com/ecsimsw
 
-제작 : 2020.05
+제작 : 2020.05 
+  
+    
+---- version info ----  
+
+아파치/ 톰캣 : apache-tomcat-8.5.54
+
+mySql : Ver 8.0.20 for Win64 on x86_64
+
+JDBC : mysql-connector-java-8.0.20
+
+ConnectionPool : commons-collections4-4.4 / commons-dbcp2-2.7.0 / commons-pool2-2.8.0
+  
+Jquery : jQuery JavaScript Library v3.5.1  
   
     
 ---- Screen Shots ----  
@@ -61,18 +74,6 @@
 ![mobile](/screenshots/작은화면.PNG)
 ![mobile](/screenshots/작은화면4.PNG)
 
-
----- version info ----  
-
-아파치/ 톰캣 : apache-tomcat-8.5.54
-
-mySql : Ver 8.0.20 for Win64 on x86_64
-
-JDBC : mysql-connector-java-8.0.20
-
-ConnectionPool : commons-collections4-4.4 / commons-dbcp2-2.7.0 / commons-pool2-2.8.0
-  
-Jquery : jQuery JavaScript Library v3.5.1
       
 ---- To do ----    
 
