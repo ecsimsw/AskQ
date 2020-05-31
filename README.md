@@ -45,7 +45,7 @@ Jquery : jQuery JavaScript Library v3.5.1
 
 2. 사이드 바    
 
-![sideBar2](/screenshots/sidebar.png)
+![sideBar2](/screenshots/sideBar.png)
 
 3. 로그인과 회원 가입    
 
