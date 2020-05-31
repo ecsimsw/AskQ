@@ -14,48 +14,66 @@
 
 제작 : 2020.05
   
+    
 ---- Screen Shots ----  
 
+1. 메인 페이지     
 
-1. 메인 페이지   
 ![mainPage](https://user-images.githubusercontent.com/46060746/83357305-994bc600-a3a6-11ea-9fd0-6fddc5c1e298.PNG)
 
-2. 사이드 바  
+2. 사이드 바    
+
 ![sideBar2](https://user-images.githubusercontent.com/46060746/83357346-c8623780-a3a6-11ea-90a6-e9b270c58c15.PNG)
 
-3. 로그인과 회원 가입  
+3. 로그인과 회원 가입    
+
 ![loginPage](/screenshots/loginPage.PNG)
 ![signInPage](/screenshots/signInpage.PNG)
 
 4. 유저 검색  
+
 ![userRecommend](/screenshots/recommend1.PNG)
 
 5. 유저의 질문과 답변 목록    
+
 ![searchedPage](/screenshots/searchedPage.PNG)
 
 6. 질문하기  
+
 ![ask](/screenshots/질문하기.PNG)
 
 7. 내 질문 내역  
+
 ![myQuestions](/screenshots/myQuestions.PNG)
 
 8. 답변하기    
+
 ![answerNew2](/screenshots/answerNew2.PNG)
 
 9. 마이 페이지
+
 ![myPage](/screenshots/myPage.PNG)
 
 10. 작은 화면 / 모바일 화면  
+
 ![mobile](/screenshots/작은화면2.PNG)
 ![mobile](/screenshots/작은화면3.PNG)
 ![mobile](/screenshots/작은화면.PNG)
 ![mobile](/screenshots/작은화면4.PNG)
 
 
----- 버젼 정보 ----  
+---- version info ----  
 
+아파치/ 톰캣 : apache-tomcat-8.5.54
 
+mySql : Ver 8.0.20 for Win64 on x86_64
+
+JDBC : mysql-connector-java-8.0.20
+
+ConnectionPool : commons-collections4-4.4 / commons-dbcp2-2.7.0 / commons-pool2-2.8.0
   
+Jquery : jQuery JavaScript Library v3.5.1
+      
 ---- To do ----    
 
 앞으로 더 추가할 기능 들
