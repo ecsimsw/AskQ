@@ -48,9 +48,9 @@
     int answered = memberDAO.getAnsweredById(userId);
     
     if(asked>answered){%>
-	<a id ="newArrived" href="userQuestionPage.jsp">Questions </a>
+	<a href="userQuestionPage.jsp"><i id="newArrived">New!</i> Questions</a>
 	<%}else{ %>
-	<a id="noNewArrived" href="userQuestionPage.jsp">Questions</a>
+	<a href="userQuestionPage.jsp">Questions</a>
 	<%} %>
 				<a href="myPage.jsp">My Page</a>
 			   	<a href="logout.jsp">Logout</a>
