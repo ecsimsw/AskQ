@@ -1,8 +1,6 @@
 ---- Info ----
 
 김진환
-
-목적 :
   
   1. JSP, Servlet / JDBC (mySql)을 연습하고 싶었습니다.
   
