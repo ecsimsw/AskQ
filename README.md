@@ -78,7 +78,7 @@ Jquery : jQuery JavaScript Library v3.5.1
 10. 작은 화면 / 모바일 화면  
 
 ![mobile](/screenshots/모바일.png)
-![mobile](/screenshots/모바일1.png
+![mobile](/screenshots/모바일1.png)
 
       
 ---- To do ----    
