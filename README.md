@@ -15,7 +15,7 @@
   3. 질문자는 로그인을 하지 않아도, 답변자의 아이디만 알면 질문할 수 있는,
   
      답변자는 질문자의 로그인 여부에 상관없이 본인 아이디만 홍보하면 사람들이 질문을 남길 수 있는 기능이 핵심이었습니다.
-
+  
 블로그 : https://ecsimsw.tistory.com/
 
 깃허브 : https://github.com/ecsimsw
@@ -48,8 +48,7 @@ Jquery : jQuery JavaScript Library v3.5.1
 
 3. 로그인과 회원 가입    
 
-![loginPage](/screenshots/loginPage.PNG)
-![signInPage](/screenshots/signInpage.PNG)
+![loginPage](/screenshots/login,signIn.png)
 
 4. 유저 검색  
 
@@ -77,10 +76,8 @@ Jquery : jQuery JavaScript Library v3.5.1
 
 10. 작은 화면 / 모바일 화면  
 
-![mobile](/screenshots/작은화면2.PNG)
-![mobile](/screenshots/작은화면3.PNG)
-![mobile](/screenshots/작은화면.PNG)
-![mobile](/screenshots/작은화면4.PNG)
+![mobile](/screenshots/모바일.png)
+![mobile](/screenshots/모바일1.png
 
       
 ---- To do ----    
