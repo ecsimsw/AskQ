@@ -1,11 +1,7 @@
 ## AnyQ
 
-  
+![logo](/screenshots/anyQ.png)
 
-## 기본 정보
-
-김진환
-  
   1. JSP, Servlet / JDBC (mySql)을 연습하고 싶었습니다.
   
   2. 제 블로그에 사람들이 질문을 남겨주시는 걸 보고,
@@ -19,16 +15,8 @@
   3. 질문자는 로그인을 하지 않아도, 답변자의 아이디만 알면 질문할 수 있는,
   
      답변자는 질문자의 로그인 여부에 상관없이 본인 아이디만 홍보하면 사람들이 질문을 남길 수 있는 기능이 핵심이었습니다.
-  
     
-블로그 : https://ecsimsw.tistory.com/
-
-깃허브 : https://github.com/ecsimsw
-
-제작 : 2020.05 
-  
-    
----- version info ----  
+## 버전 정보 
 
 아파치/ 톰캣 : apache-tomcat-8.5.54
 
@@ -41,7 +29,7 @@ ConnectionPool : commons-collections4-4.4 / commons-dbcp2-2.7.0 / commons-pool2-
 Jquery : jQuery JavaScript Library v3.5.1  
   
     
----- Screen Shots ----  
+## 실행 화면
 
 1. 메인 페이지     
 
@@ -84,5 +72,16 @@ Jquery : jQuery JavaScript Library v3.5.1
 ![mobile](/screenshots/모바일.png)
 ![mobile](/screenshots/모바일1.png)
 
+
+## 만든이
+
+김진환
+  
+블로그 : https://ecsimsw.tistory.com/
+
+깃허브 : https://github.com/ecsimsw
+
+제작 : 2020.05 
+  
       
----- 후기 ----
+## 후기
