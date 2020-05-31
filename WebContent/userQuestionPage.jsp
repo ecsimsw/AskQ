@@ -25,6 +25,7 @@
 				  <div class="sidenav">
 				  	  <a href="mainPage.jsp">Home</a>
 					  <a href="myPage.jsp">My Page</a>
+					  <a href="logoutAction.jsp">Logout</a>
 					  <a href="aboutPage.jsp">About</a>
 					  <a href="https://ecsimsw.tistory.com/">Contact</a>
 				  </div>
@@ -61,7 +62,7 @@
 	    <tr>
 	      <td data-label="No"><%=index_newQuestions++%></td>
 	      <td data-label="Questioner"><%=question.getQuestioner() %></td>
-	      <td data-label="Question"><%= question.getQuestion() %></td>
+	      <td id="question" data-label="Question"><%= question.getQuestion() %></td>
 	      <td data-label="Action">
 		   <button class="actionButton"
 		   onclick="location.href='updatePage.jsp?no=<%=question.getNo()%>'">Update</button> 	   
@@ -99,7 +100,7 @@
 	    <tr>
 	      <td data-label="No"><%=index_answered++%></td>
 	      <td data-label="Questioner"><%=question.getQuestioner() %></td>
-	      <td data-label="Question"><%= question.getQuestion() %></td>
+	      <td id="question" data-label="Question"><%= question.getQuestion() %></td>
 	      <td data-label="Action">
 		   <button class="actionButton"
 		   onclick="location.href='updatePage.jsp?no=<%=question.getNo()%>'">Update</button> 	   

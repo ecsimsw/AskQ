@@ -11,7 +11,7 @@
 	
 	int no = 0;
 	String questioner = request.getParameter("questioner");
-	int questioner_type = (request.getParameter("isAnonymous")=="true"? 0:1);
+	int questioner_type = (request.getParameter("isAnonymous").equals("true")? 0:1);
 	
 	SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
 	String question_date = date.format(new Date()); // get date yyyy-mm-dd
@@ -31,10 +31,9 @@
 					null,  // default answer
 					0)     // default status
 			);
-
-	memberDAO.changeAskedById(receiver, memberDAO.getAskedById(receiver)+1);
-	
 	if(r == 0){ // succeed
+		memberDAO.changeAskedById(receiver, memberDAO.getAskedById(receiver)+1);
+		
 %>
 <script>
  	alert("Ask succeed");

@@ -172,3 +172,30 @@ body {
 	margin-left : 10px;
 	float:left;
 }
+
+@media ( max-width: 760px ) {
+    #askedAnswered{
+    display:none
+    }
+    #questionImg{
+    width:70px;
+    }
+    #contact{
+    padding:10px;
+    }
+    #answerImg{
+    width:25px;
+    }
+    #questionerImg{
+    width:25px;
+    }
+    #questionImg{
+    width:25px;
+
+    }
+    .msg{
+    width:93%;
+    margin-left:30px;
+    }
+    
+}

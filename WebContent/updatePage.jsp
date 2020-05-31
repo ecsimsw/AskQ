@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>Answer</title>
 </head>
 
 <link rel='styleSheet' href ="resource/styleSheet/updateForm.css">      

@@ -96,3 +96,7 @@ table th {
 .actionButton{
 	width:70px;
 }
+
+#question{
+	white-space: nowrap;
+}

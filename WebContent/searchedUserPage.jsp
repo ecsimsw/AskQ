@@ -29,11 +29,9 @@
 	 	// check searched user is valid
 	 %>
 	 
-	 
 	 <%-- start non-valid user --%>
 	
 	 Non Existent User
-	 
 	 
 	 <%-- start valid User --%>
 	 
@@ -57,15 +55,15 @@
 				<a href="mainPage.jsp">Home</a>
 				<% if(loginInfo ==null){%>
 					<a href="loginPage.jsp">Login</a>
-				 <%}else{%> <% 
-    int asked = memberDAO.getAskedById(loginInfo);
-    int answered = memberDAO.getAnsweredById(loginInfo);
-    
-    if(asked>answered){%>
-	<a href="userQuestionPage.jsp"><i id="newArrived">New!</i> Questions</a>
-	<%}else{ %>
-	<a href="userQuestionPage.jsp">Questions</a>
-	<%} %>
+				 <%}else{
+					int asked = memberDAO.getAskedById(loginInfo);
+				    int answered = memberDAO.getAnsweredById(loginInfo);
+				    
+				    if(asked>answered){%>
+					<a href="userQuestionPage.jsp"><i id="newArrived">New!</i> Questions</a>
+					<%}else{ %>
+					<a href="userQuestionPage.jsp">Questions</a>
+					<%} %>
 					<a href="myPage.jsp">My Page</a>
 					<a href="logoutAction.jsp">Logout</a>
 				<%}%>
