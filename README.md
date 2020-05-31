@@ -23,7 +23,9 @@
 2. 사이드 바  
 ![sideBar2](https://user-images.githubusercontent.com/46060746/83357346-c8623780-a3a6-11ea-90a6-e9b270c58c15.PNG)
 
-3. 로그인과 회원 가입
+3. 로그인과 회원 가입  
+![loginPage](/screenshots/loginPage.PNG)
+![signInPage](/screenshots/signInpage.PNG)
 
 4. 유저 검색  
 ![userRecommend](/screenshots/recommend1.PNG)
