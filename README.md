@@ -15,19 +15,21 @@
 깃허브 : https://github.com/ecsimsw
 
 제작 : 2020.05
+  
+---- Screen Shots ----  
 
----- Screen Shots ----
+![mainPage](https://user-images.githubusercontent.com/46060746/83357305-994bc600-a3a6-11ea-9fd0-6fddc5c1e298.PNG)
 
-
-
-
-
-
----- 버젼 정보 ----
+![sideBar2](https://user-images.githubusercontent.com/46060746/83357346-c8623780-a3a6-11ea-90a6-e9b270c58c15.PNG)
 
 
 
----- To do ----
+
+---- 버젼 정보 ----  
+
+
+  
+---- To do ----    
 
 앞으로 더 추가할 기능 들
 
