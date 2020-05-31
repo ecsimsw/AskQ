@@ -15,6 +15,7 @@
 <% request.setCharacterEncoding("euc-kr");%>
 <%
    String userId = (String)session.getAttribute("loginInfo");
+
    if(userId == null){
 %>
   <script>
