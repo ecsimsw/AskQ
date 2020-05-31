@@ -1,137 +1,42 @@
 ---- Info ----
 
-±èÁøÈ¯
+ê¹€ì§„í™˜
 
-¸ñÀû :
+ëª©ì  :
   
-  1. JSP, Servlet / JDBC (mySql)À» ¿¬½ÀÇÏ°í ½Í¾ú½À´Ï´Ù.
+  1. JSP, Servlet / JDBC (mySql)ì„ ì—°ìŠµí•˜ê³  ì‹¶ì—ˆìŠµë‹ˆë‹¤.
   
-  2. ºí·Î±×¿¡ »ç¶÷µéÀÌ Áú¹®À» ³²°ÜÁÖ½Ã´Â °É º¸°í,
-     À¯Æ©¹ö¿Í ±¸µ¶ÀÚ / ½ºÅ¸¿Í ÆÒ / ºí·Î°Å¿Í ¹æ¹®ÀÚ ÀÇ °ü°è¿¡¼­ Á» ´õ ÀÚÀ¯·Ó°Ô Áú¹®À» ³²±â°í ´äº¯ÇÏ´Â ¼­ºñ½º°¡ ÀÖÀ¸¸é
-     ÁÁÀ» °Í °°¾Æ¼­ ¸¸µé°Ô µÇ¾ú½À´Ï´Ù.
+  2. ë¸”ë¡œê·¸ì— ì‚¬ëŒë“¤ì´ ì§ˆë¬¸ì„ ë‚¨ê²¨ì£¼ì‹œëŠ” ê±¸ ë³´ê³ ,
+     ìœ íŠœë²„ì™€ êµ¬ë…ì / ìŠ¤íƒ€ì™€ íŒ¬ / ë¸”ë¡œê±°ì™€ ë°©ë¬¸ì ì˜ ê´€ê³„ì—ì„œ ì¢€ ë” ììœ ë¡­ê²Œ ì§ˆë¬¸ì„ ë‚¨ê¸°ê³  ë‹µë³€í•˜ëŠ” ì„œë¹„ìŠ¤ê°€ ìˆìœ¼ë©´
+     ì¢‹ì„ ê²ƒ ê°™ì•„ì„œ ë§Œë“¤ê²Œ ë˜ì—ˆìŠµë‹ˆë‹¤.
 
-ºí·Î±× : https://ecsimsw.tistory.com/
+ë¸”ë¡œê·¸ : https://ecsimsw.tistory.com/
 
-±êÇãºê : https://github.com/ecsimsw
+ê¹ƒí—ˆë¸Œ : https://github.com/ecsimsw
 
-Á¦ÀÛ : 2020.05
-
-
----- To do ----
-
-¾ÕÀ¸·Î ´õ Ãß°¡ÇÒ ±â´É µé
-
-1. È¸¿ø °Ë»ö 
-
-  - ´Ù¸¥ ´äº¯¿¡ ÁÁ¾Æ¿ä ±â´É 
+ì œì‘ : 2020.05
   
-  - ÁÁ¾Æ¿ä ¼ø¼­, Áú¹®ÀÚ µî·Ï ¼ø¼­, ´äº¯ µî·Ï ¼ø¼­·Î Á¤·Ä
+---- Screen Shots ----  
 
-2. »ç¿ëÀÚ ¾ÆÀÌÄÜ ¼±ÅÃ 
+![mainPage](https://user-images.githubusercontent.com/46060746/83357305-994bc600-a3a6-11ea-9fd0-6fddc5c1e298.PNG)
+
+![sideBar2](https://user-images.githubusercontent.com/46060746/83357346-c8623780-a3a6-11ea-90a6-e9b270c58c15.PNG)
+
+
+
+
+---- ë²„ì ¼ ì •ë³´ ----  
+
+
   
-3. ÆÄÀÏ, º¯¼ö¸í ¸®ÆåÅä¸µ
+---- To do ----    
 
-4. È¸¿ø »èÁ¦
+ì•ìœ¼ë¡œ ë” ì¶”ê°€í•  ê¸°ëŠ¥ ë“¤
 
+1. ì¢‹ì•„ìš” ê¸°ëŠ¥ 
 
----- ¹öÁ¯ Á¤º¸ ----
-
-
-
-
----- style Á¤º¸ ----
-
-1. ask / login / update Form
-
-  background: #b0b0b0;
-
-  #contact button[type="submit"]:hover {
-  background: #808080;
+2. ì‚¬ìš©ì ì•„ì´ì½˜ ì„ íƒ 
   
-  #contact button[type="submit"]:active {
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
-  }
-  
+3. íŒŒì¼, ë³€ìˆ˜ëª… ë¦¬í™í† ë§
 
----- DB DAO ----
-
-1. MerberDAO  
-
- - private MemberDAO()
- - static MemberDAO getInstance()
- - String getPwById(String id)
- - LinkedList<String> getMemebersIdList()
- - int insertMember(String new_id, String new_pw)
- - int loginCheck(String inputId, String inputPw)
- - int changePwById(String currentId, String newPw)
- - int getAnsweredById(String id)
- - int changeAskedById(String id, int asked)
- - int changeIntroduceById(String id, String introduce)
- - String getIntroduceById(String id)
- 
- - static int USER_NONEXISTENT = 1;
- - static int WRONG_PASSWORD = 2;
- - static int VALID_USER = 0;
- 
-2. QuesitonDAO
-
-  - private QuestionDAO()
-  - static QuestionDAO getInstance()  
-  - int insertQuestion(QuestionDTO question) 
-  - int updateAnswer(int no, String answer, int status)
-  - ArrayList<QuestionDTO> searchPublicQ(String searchedUser)
-  - ArrayList<QuestionDTO> searchPrivateQ(String searchedUser)
-  - int deleteByNo(int no)
-  - QuestionDTO getQuestionByNo(int no) 
-  
-  
----- DB INFO ----
-
-DB_name : anyq
-
-1. members
-mysql> DESC members;
-+-----------+-------------+------+-----+---------+----------------+
-| Field     | Type        | Null | Key | Default | Extra          |
-+-----------+-------------+------+-----+---------+----------------+
-| no        | int         | NO   | PRI | NULL    | auto_increment |
-| id        | varchar(11) | YES  |     | NULL    |                |
-| pw        | varchar(11) | YES  |     | NULL    |                |
-| introduce | text        | YES  |     | NULL    |                |
-| status    | int         | YES  |     | NULL    |                |
-| icon      | int         | YES  |     | NULL    |                |
-| asked     | int         | YES  |     | NULL    |                |
-| answered  | int         | YES  |     | NULL    |                |
-+-----------+-------------+------+-----+---------+----------------+
-status
-
-0 : default
-1 : new arrived question
-
-icon
-
-0 : default
-
-2. questions
-+-----------------+-------------+------+-----+---------+----------------+
-| Field           | Type        | Null | Key | Default | Extra          |
-+-----------------+-------------+------+-----+---------+----------------+
-| no              | int         | NO   | PRI | NULL    | auto_increment |
-| questioner      | varchar(11) | YES  |     | NULL    |                |
-| questioner_type | int         | YES  |     | NULL    |                |
-| question_date   | date        | YES  |     | NULL    |                |
-| receiver        | varchar(11) | YES  |     | NULL    |                |
-| question        | text        | YES  |     | NULL    |                |
-| answer          | text        | YES  |     | NULL    |                |
-| status          | int         | YES  |     | NULL    |                |
-+-----------------+-------------+------+-----+---------+----------------+
-
-questioner_type
-
-0 : non-user
-1 : user
-
-status
-
-0 : nonAnswered, non-public
-1 : Answered, public
+4. íšŒì› ì‚­ì œ
