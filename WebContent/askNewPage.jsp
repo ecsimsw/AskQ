@@ -21,10 +21,10 @@
 	      <input type="hidden" id ="searchedUser" name="searchedUser" value=<%=searchedId%>>
 	      
 	      <%if(loginInfo == null){%>
-	      <input type="hidden" name="isAnonymous" checked="checked" onclick="return false;">Anonymous
+	      <input type="hidden" name="isAnonymous" checked="checked" onclick="return false;">
 		  <input type="text" name ="questioner" tabindex="1" value=anonymous required > 
 	   	  <%}else if(loginInfo != null){%>
-	   	   <input type="hidden" name="isAnonymous">Anonymous  
+	   	   <input type="hidden" name="isAnonymous"> 
 	   	   <input placeholder="Type your name" type="text" name ="questioner" tabindex="1" value=<%=loginInfo%> readonly> 
 	   	  <%} %>
 	   	  

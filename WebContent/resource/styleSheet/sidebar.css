@@ -85,10 +85,29 @@ html.open {
   color: #818181;
   display: block;
 }
-
+#noNewArrived{
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #818181;
+  display: block;
+}
+#newArrived{
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  color:#51acff;;
+  display: block;
+}
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
   color: black;
+}
+#noNewArrived:hover{
+  color:black;
+}
+#newArrived:hover{
+  color:#7373ff;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */

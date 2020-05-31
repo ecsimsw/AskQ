@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@ page import="com.ecsimsw.askq.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,7 +34,17 @@
 <% if(loginInfo ==null){%>
 	<a href="loginPage.jsp">Login</a>
  <%}else{ %>
-	<a href="userQuestionPage.jsp">Questions</a>
+ 
+    <% 
+    MemberDAO memberDAO = MemberDAO.getInstance();
+    int asked = memberDAO.getAskedById(loginInfo);
+    int answered = memberDAO.getAnsweredById(loginInfo);
+    
+    if(asked>answered){%>
+	<a id ="newArrived" href="userQuestionPage.jsp">Questions </a>
+	<%}else{ %>
+	<a id ="noNewArrived" href="userQuestionPage.jsp">Questions</a>
+	<%} %>
 	<a href="myPage.jsp">My Page</a>
 	<a href="logout.jsp">Logout</a>
 <%}%>

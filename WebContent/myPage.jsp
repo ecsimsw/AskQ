@@ -43,7 +43,15 @@
 			  
 			  <div class="sidenav">
 				<a href="mainPage.jsp">Home</a>
-				<a href="userQuestionPage.jsp">Questions</a>
+				 <% 
+    int asked = memberDAO.getAskedById(userId);
+    int answered = memberDAO.getAnsweredById(userId);
+    
+    if(asked>answered){%>
+	<a id ="newArrived" href="userQuestionPage.jsp">Questions </a>
+	<%}else{ %>
+	<a id="noNewArrived" href="userQuestionPage.jsp">Questions</a>
+	<%} %>
 				<a href="myPage.jsp">My Page</a>
 			   	<a href="logout.jsp">Logout</a>
 		    	  <a href="aboutPage.jsp">About</a>
