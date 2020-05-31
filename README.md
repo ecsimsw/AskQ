@@ -1,8 +1,6 @@
 ---- Info ----
 
 김진환
-
-목적 :
   
   1. JSP, Servlet / JDBC (mySql)을 연습하고 싶었습니다.
   
@@ -18,11 +16,37 @@
   
 ---- Screen Shots ----  
 
+
+1. 메인 페이지   
 ![mainPage](https://user-images.githubusercontent.com/46060746/83357305-994bc600-a3a6-11ea-9fd0-6fddc5c1e298.PNG)
 
+2. 사이드 바  
 ![sideBar2](https://user-images.githubusercontent.com/46060746/83357346-c8623780-a3a6-11ea-90a6-e9b270c58c15.PNG)
 
+3. 로그인과 회원 가입
 
+4. 유저 검색  
+![userRecommend](/screenshots/recommend1.PNG)
+
+5. 유저의 질문과 답변 목록    
+![searchedPage](/screenshots/searchedPage.PNG)
+
+6. 질문하기
+
+7. 내 질문 내역  
+![myQuestions](/screenshots/myQuestions.PNG)
+
+8. 답변하기    
+![answerNew2](/screenshots/answerNew2.PNG)
+
+9. 마이 페이지
+![myPage](/screenshots/myPage.PNG)
+
+10. 작은 화면 / 모바일 화면  
+![mobile](/screenshots/작은화면2.PNG)
+![mobile](/screenshots/작은화면3.PNG)
+![mobile](/screenshots/작은화면.PNG)
+![mobile](/screenshots/작은화면4.PNG)
 
 
 ---- 버젼 정보 ----  
