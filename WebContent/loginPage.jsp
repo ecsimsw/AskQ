@@ -10,11 +10,12 @@
 <meta charset="EUC-KR">
 <title>AnyQ/login</title>
 </head>
+
+<link rel='styleSheet' href ="resource/styleSheet/loginForm.css">
 <body>
-	<link rel='styleSheet' href ="resource/styleSheet/loginForm.css">
     <div class="login-page">
 	  	<div class="form">
-	  	   <form method="post" action="login.jsp" onsubmit="return loginFormCheck()"
+	  	   <form method="post" action="loginAction.jsp" onsubmit="return loginFormCheck()"
 	  	      class="login-form">
 		      <input type="text" id="login_id" name ="id" placeholder="username"/>
 		      <input type="password" id="login_pw" name="pw" placeholder="password"/>

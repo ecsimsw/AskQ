@@ -15,7 +15,7 @@
   }
   else if(result == MemberDAO.WRONG_PASSWORD){
 %>
-  <script language ="javascript">
+  <script>
   	alert("wrong password");
   	history.go(-1);
   </script>
@@ -23,7 +23,7 @@
   }
   else if(result == MemberDAO.USER_NONEXISTENT){
 %>
-  <script language ="javascript">
+  <script>
   	alert("Non-existent user");
   	history.go(-1);
   </script>

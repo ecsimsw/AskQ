@@ -51,7 +51,6 @@
 	  <tbody>
 	    <%
 	    	questionDAO = QuestionDAO.getInstance();
-	   		//searched = questionDAO.searchNewQ("ecsimsw");
 	    
 	        searched = questionDAO.searchPrivateQ(loginInfo);
 		 	Collections.sort(searched);

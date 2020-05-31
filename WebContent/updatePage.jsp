@@ -8,24 +8,22 @@
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
+
+<link rel='styleSheet' href ="resource/styleSheet/updateForm.css">      
 <body>
 	<% int no = Integer.parseInt(request.getParameter("no"));
 	   QuestionDAO questionDAO = QuestionDAO.getInstance();
 	   QuestionDTO question = questionDAO.getQuestionByNo(no);
 	
 	%>
-	<link rel='styleSheet' href ="resource/styleSheet/updateForm.css">
-      
      <div class="container">  
 	  <form id="contact" action="updateAction.jsp" method="post">
 	    <h3 id="from">From</h3>
 	    <h1><%=question.getQuestioner() %></h1>
 	    
-	    
 	    <h3 id="title">Question</h3>
 	      <input type=hidden name='no' value='<%=question.getNo()%>'>
 	      <pre id ="questionContent"><%=question.getQuestion()%></pre>
-	    
 	    
 	    <h3 id="title">Answer</h3>
 	      <textarea 

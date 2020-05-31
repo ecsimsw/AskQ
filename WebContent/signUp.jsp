@@ -12,7 +12,7 @@
   
   if(result != MemberDAO.USER_NONEXISTENT){ 
  %>
-  <script language="javascript">
+  <script>
   	alert("Id is already used");
   	history.go(-1);
   </script>
@@ -20,7 +20,7 @@
   }else{
     memberDAO.insertMember(inputId, inputPw);
  %>  
-  <script language="javascript">
+  <script>
   	alert("Welcome!!");
   </script>  
 <%

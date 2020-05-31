@@ -13,11 +13,10 @@
 <title>AnyQ/login</title>
 </head>
 
-<%
-   String loginInfo = (String)session.getAttribute("loginInfo");
-%>
+<%String loginInfo = (String)session.getAttribute("loginInfo");%>
+<link rel='styleSheet' href ="resource/styleSheet/loginForm.css">
 <body>
-	<link rel='styleSheet' href ="resource/styleSheet/loginForm.css">
+	
     <div class="login-page">
 	  	<div class="form">
 	  	   <form method="post" action="confirmAction.jsp" onsubmit="return loginFormCheck()"
@@ -32,8 +31,8 @@
 			  <input type="password" id="login_pw" required name="pw" placeholder="password"/>
 		      <button type="submit">Confirm</button>
 		    </form>
-	</div>
-	
+		</div>
+   </div>
    <script type ="text/javascript">
 		$('.message a').click(function(){
 		   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");

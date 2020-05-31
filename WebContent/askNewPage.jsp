@@ -8,15 +8,15 @@
 <title>Ask</title>
 </head>
 
-	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<link rel='styleSheet' href ="resource/styleSheet/askPageForm.css">
 <body>
 	<% String searchedId = request.getParameter("searchedId");
 	   String loginInfo = (String)session.getAttribute("loginInfo");
 	%>
-	<link rel='styleSheet' href ="resource/styleSheet/askNewPage.css">
       
      <div class="container">  
-	  <form id="contact" action="ask.jsp" method="post">
+	  <form id="contact" action="askAction.jsp" method="post">
 	    <h3>Ask <%=searchedId %></h3>
 	      <input type="hidden" id ="searchedUser" name="searchedUser" value=<%=searchedId%>>
 	      

@@ -67,7 +67,7 @@
 	<a href="userQuestionPage.jsp">Questions</a>
 	<%} %>
 					<a href="myPage.jsp">My Page</a>
-					<a href="logout.jsp">Logout</a>
+					<a href="logoutAction.jsp">Logout</a>
 				<%}%>
 				  <a href="aboutPage.jsp">About</a>
 				  <a href="https://ecsimsw.tistory.com/">Contact</a>

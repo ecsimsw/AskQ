@@ -22,13 +22,16 @@
 	int result = questionDAO.deleteByNo(no);
 	if(result==0){
  %>
+ 	<script>
  	alert("successfully deleted");
+ 	</script>
  <%
 	 response.sendRedirect("userQuestionPage.jsp");
 	}else{
  %>
+ 	<script>
 	 alert("failed");
-	 response.sendRedirect("userQuestionPage.jsp");
+	</script>	
  <%
-	 }
+    response.sendRedirect("userQuestionPage.jsp"); }
  %>

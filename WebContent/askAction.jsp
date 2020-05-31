@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
 <%@ page import="com.ecsimsw.askq.*" %>
 <%@ page import="java.util.*" %> 
 <%@ page import="java.text.SimpleDateFormat" %>
@@ -15,8 +14,7 @@
 	int questioner_type = (request.getParameter("isAnonymous")=="true"? 0:1);
 	
 	SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
-	String question_date = date.format(new Date());
-	// get date yyyy-mm-dd
+	String question_date = date.format(new Date()); // get date yyyy-mm-dd
 	
 	String receiver = request.getParameter("searchedUser");
 	
@@ -36,7 +34,7 @@
 
 	memberDAO.changeAskedById(receiver, memberDAO.getAskedById(receiver)+1);
 	
-	if(r == 0){
+	if(r == 0){ // succeed
 %>
 <script>
  	alert("Ask succeed");

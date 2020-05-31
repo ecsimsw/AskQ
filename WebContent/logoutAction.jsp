@@ -2,6 +2,7 @@
     pageEncoding="EUC-KR"%>
 
 <%
-	session.removeValue("loginInfo");
+	session.removeAttribute("loginInfo");
+	//session.removeValue("loginInfo");
 	response.sendRedirect("mainPage.jsp");
 %>

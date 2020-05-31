@@ -27,7 +27,6 @@
  MemberDAO memberDAO = MemberDAO.getInstance(); 
 %>
 			
-
 <link rel='styleSheet' href ="resource/styleSheet/sidebar.css">
 <body>
 	<div class="w3-content w3-container w3-margin-top">
@@ -43,17 +42,17 @@
 			  
 			  <div class="sidenav">
 				<a href="mainPage.jsp">Home</a>
-				 <% 
-    int asked = memberDAO.getAskedById(userId);
-    int answered = memberDAO.getAnsweredById(userId);
-    
-    if(asked>answered){%>
-	<a href="userQuestionPage.jsp"><i id="newArrived">New!</i> Questions</a>
-	<%}else{ %>
-	<a href="userQuestionPage.jsp">Questions</a>
-	<%} %>
+				<% 
+			    int asked = memberDAO.getAskedById(userId);
+			    int answered = memberDAO.getAnsweredById(userId);
+			    
+			    if(asked>answered){%>
+				<a href="userQuestionPage.jsp"><i id="newArrived">New!</i> Questions</a>
+				<%}else{ %>
+				<a href="userQuestionPage.jsp">Questions</a>
+				<%} %>
 				<a href="myPage.jsp">My Page</a>
-			   	<a href="logout.jsp">Logout</a>
+			   	<a href="logoutAction.jsp">Logout</a>
 		    	  <a href="aboutPage.jsp">About</a>
 			      <a href="https://ecsimsw.tistory.com/">Contact</a>
 				</div>
@@ -65,7 +64,7 @@
 		     <br>
 			 <div class="menu"> <b>회원정보</b> </div>
 			 <br>
-			<form id="pwForm" action="changeUserInfo.jsp" method="post">	
+			<form id="pwForm" action="changeUserInfoAction.jsp" method="post">	
 				<p>
 				<label>ID</label>
 				<input class="w3-input" id="userId" type="text" name="id" value="<%=userId %>" readonly>
@@ -79,7 +78,7 @@
 			 <br><br>
 		     <div class="menu"> <b>비밀번호 변경</b> </div>
 		     <br>
-			<form id="pwForm" action="changePassword.jsp" method="post" onsubmit="return memberFormCheck()">	
+			<form id="pwForm" action="changePwAction.jsp" method="post" onsubmit="return memberFormCheck()">	
 				<input type="hidden" name="current_id" value="<%=userId%>">
 				<p>
 					<label>Current Password</label>
