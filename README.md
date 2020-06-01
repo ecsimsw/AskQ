@@ -32,15 +32,15 @@ Jquery : jQuery JavaScript Library v3.5.1
     
 ## 실행 화면  
 
-1. 메인 페이지     
+메인 페이지     
   - 중앙의 검색창에 유저 아이디를 입력하여 해당 유저의 질문창으로 이동합니다.
 ![mainPage](https://user-images.githubusercontent.com/46060746/83357305-994bc600-a3a6-11ea-9fd0-6fddc5c1e298.PNG)
 
-2. 유저 검색  
+유저 검색  
   - 검색창에 문자열을 입력하면, 일치하는 id 목록을 추천해쥽니다. 
 ![userRecommend](/screenshots/recommend1.PNG)
 
-3. 유저의 질문과 답변 목록
+유저의 질문과 답변 목록
   - 검색 유저가 받은 질문과 답변을 볼 수 있는 페이지 입니다. 해당 유저의 소갯말과, 받은 질문 / 답변한 질문의 수를 상단에서 보여주고, 하단에는 질문들과 답변을 확인할 수 있습니다.
   
   - 질문자가 유저라면 해당하는 아이콘과 id가, 익명 사용자라면 익명에 맞는 아이콘과 질문자가 정한 이름이 표시됩니다.
@@ -49,40 +49,40 @@ Jquery : jQuery JavaScript Library v3.5.1
     
 ![searchedPage](/screenshots/searchedPage.PNG)
 
-4. 질문하기   
+질문하기   
   - 검색 유저 소개글 옆에 아이콘으로 질문할 수 있습니다.  
 ![ask](/screenshots/질문하기.PNG)
 
-5. 사이드 바   
+사이드 바   
   - 메뉴를 편하게 이동하기 위한 사이드바 입니다. 로그인 여부, 현재 페이지에 따라 다른 메뉴를 갖고 있습니다.
   
   - 새로운 질문이 도착하면 이를 표시합니다.
 ![sideBar2](/screenshots/sideBar.png)
 
 
-6. 로그인과 회원 가입      
+로그인과 회원 가입      
   - 기본적으로 로그인 화면이나, 아래 Create an account를 누르면 페이지 이동없이 form 전환이 일어납니다.
 
   - 항목을 놓쳤거나 조건에 맞지 않는 정보가 입력되면, submit을 처리하지 않고, 해당 칸을 강조합니다. 
 ![loginPage](/screenshots/login,signIn.png)
 
-7. 내 질문 내역    
+내 질문 내역    
 
   - 받은 질문에 답을 하거나, 답 한 질문의 답변을 수정할 수 있습니다. 또는 질문을 삭제할 수 있습니다.
 ![myQuestions](/screenshots/myQuestions.PNG)
 
-8. 답변하기    
+답변하기    
 
   - 이미 답한 질문이라면, answer에 기존 작성한 답변이 출력됩니다. 수정을 원한다면 이를 고쳐 submit 할 수 있습니다.
 
 ![answerNew2](/screenshots/answerNew2.PNG)
 
-9. 마이 페이지  
+마이 페이지  
 
   - 본인 소개글이나, 비밀번호를 변경할 수 있습니다. 
 ![myPage](/screenshots/myPage.PNG)
 
-10. 작은 화면 / 모바일 화면    
+작은 화면 / 모바일 화면    
 
   - 화면 크기에 따라 반응할 수 있도록 화면을 구성하였습니다.
   
