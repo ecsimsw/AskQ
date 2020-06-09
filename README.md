@@ -61,6 +61,8 @@ Jquery : jQuery JavaScript Library v3.5.1
 
 ## 질문하기   
   - 검색 유저 소개글 옆에 아이콘으로 질문할 수 있습니다.  
+  <br>  
+  
 ![ask](/screenshots/질문하기.PNG)
 
 <br>  
@@ -69,6 +71,8 @@ Jquery : jQuery JavaScript Library v3.5.1
   - 메뉴를 편하게 이동하기 위한 사이드바 입니다. 로그인 여부, 현재 페이지에 따라 다른 메뉴를 갖고 있습니다.
   
   - 새로운 질문이 도착하면 이를 표시합니다.
+  <br>   
+  
 ![sideBar2](/screenshots/sideBar.png)
 
 <br>  
@@ -77,6 +81,9 @@ Jquery : jQuery JavaScript Library v3.5.1
   - 기본적으로 로그인 화면이나, 아래 Create an account를 누르면 페이지 이동없이 form 전환이 일어납니다.
 
   - 항목을 놓쳤거나 조건에 맞지 않는 정보가 입력되면, submit을 처리하지 않고, 해당 칸을 강조합니다. 
+  <br>
+  
+  
 ![loginPage](/screenshots/login,signIn.png)
 
 <br>  
@@ -84,6 +91,7 @@ Jquery : jQuery JavaScript Library v3.5.1
 ## 내 질문 내역    
 
   - 받은 질문에 답을 하거나, 답 한 질문의 답변을 수정할 수 있습니다. 또는 질문을 삭제할 수 있습니다.
+  
 ![myQuestions](/screenshots/myQuestions.PNG)
 
 <br>  
@@ -91,6 +99,8 @@ Jquery : jQuery JavaScript Library v3.5.1
 ## 답변하기    
 
   - 이미 답한 질문이라면, answer에 기존 작성한 답변이 출력됩니다. 수정을 원한다면 이를 고쳐 submit 할 수 있습니다.
+<br>  
+
 
 ![answerNew2](/screenshots/answerNew2.PNG)
 
@@ -99,6 +109,9 @@ Jquery : jQuery JavaScript Library v3.5.1
 ## 마이 페이지  
 
   - 본인 소개글이나, 비밀번호를 변경할 수 있습니다. 
+  <br>
+  
+  
 ![myPage](/screenshots/myPage.PNG)
 
 <br>  
@@ -108,6 +121,7 @@ Jquery : jQuery JavaScript Library v3.5.1
   - 화면 크기에 따라 반응할 수 있도록 화면을 구성하였습니다.
   
   - 작은 화면이나 모바일에서는 구성 요소의 크기나 작아지고, 요소간 거리가 좁아지며, 필수적이지 않은 요소는 제거하여 좀 더 유연한 화면을 만들고자 하였습니다.  
+<br>  
 
 ![mobile](/screenshots/모바일.png)
 ![mobile](/screenshots/모바일1.png)
